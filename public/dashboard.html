@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Client Dashboard &mdash; CG Agency
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="dashboard.css" rel="stylesheet">
+ </head>
+ <body>
+  <aside class="sidebar" id="sidebar">
+   <a class="sb-logo" href="index.html">
+    CG
+    <span>
+     Agency
+    </span>
+   </a>
+   <nav class="sb-nav">
+    <button class="sbn active" data-section="overview">
+     <span class="sbn-icon">
+      &plusb;
+     </span>
+     Overview
+    </button>
+    <button class="sbn" data-section="projects">
+     <span class="sbn-icon">
+      ◈
+     </span>
+     Projects
+    </button>
+    <button class="sbn" data-section="messages">
+     <span class="sbn-icon">
+      ◉
+     </span>
+     Messages
+     <span class="sbn-badge">
+      3
+     </span>
+    </button>
+    <button class="sbn" data-section="files">
+     <span class="sbn-icon">
+      ◫
+     </span>
+     Files
+    </button>
+    <button class="sbn" data-section="invoices">
+     <span class="sbn-icon">
+      ◎
+     </span>
+     Invoices
+    </button>
+    <button class="sbn" data-section="analytics">
+     <span class="sbn-icon">
+      ◐
+     </span>
+     Analytics
+    </button>
+    <button class="sbn" data-section="settings">
+     <span class="sbn-icon">
+      ◑
+     </span>
+     Settings
+    </button>
+   </nav>
+   <div class="sb-bottom">
+    <div class="sb-user">
+     <div class="sb-av" id="sbAv">
+      SR
+     </div>
+     <div>
+      <strong id="sbName">
+       MD Saidul Islam Ratin
+      </strong>
+      <span id="sbEmail">
+       mdsaidulislamratin967@gmail.com
+      </span>
+     </div>
+    </div>
+    <a class="sb-logout" href="login.html" id="logoutBtn">
+     &larr; Logout
+    </a>
+   </div>
+  </aside>
+  <div class="dash-main">
+   <div class="topbar">
+    <div class="tb-left">
+     <button class="sb-toggle" id="sbToggle">
+      ☰
+     </button>
+     <div class="tb-search">
+      <span>
+       🔍
+      </span>
+      <input id="searchInput" placeholder="Search projects, files..." type="text">
+     </div>
+    </div>
+    <div class="tb-right">
+     <button class="tb-notif" id="notifBtn">
+      <span>
+       🔔
+      </span>
+      <span class="notif-dot">
+      </span>
+     </button>
+     <div class="tb-user">
+      <div class="tb-av" id="tbAv">
+       SR
+      </div>
+      <span id="tbName">
+       MD Saidul Islam Ratin
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="dash-content">
+    <!-- OVERVIEW -->
+    <div class="ds-section active" id="sec-overview">
+     <div class="ds-head">
+      <div>
+       <h1 id="greetMsg">
+        Good morning, Saidul 👋
+       </h1>
+       <p>
+        Here's what's happening with your projects today.
+       </p>
+      </div>
+      <button class="btn-new" onclick="switchSection('projects')">
+       + New Project
+      </button>
+     </div>
+     <div class="stat-cards">
+      <div class="sc">
+       <div class="sc-icon" style="--c:var(--v3)">
+        ◈
+       </div>
+       <div class="sc-data">
+        <span class="sc-num counter" data-t="4">
+         0
+        </span>
+        <p>
+         Active Projects
+        </p>
+       </div>
+      </div>
+      <div class="sc">
+       <div class="sc-icon" style="--c:var(--pink)">
+        ◉
+       </div>
+       <div class="sc-data">
+        <span class="sc-num counter" data-t="2">
+         0
+        </span>
+        <p>
+         Pending Review
+        </p>
+       </div>
+      </div>
+      <div class="sc">
+       <div class="sc-icon" style="--c:var(--green)">
+        ◫
+       </div>
+       <div class="sc-data">
+        <span class="sc-num counter" data-t="8">
+         0
+        </span>
+        <p>
+         Completed
+        </p>
+       </div>
+      </div>
+      <div class="sc">
+       <div class="sc-icon" style="--c:var(--cyan)">
+        ◎
+       </div>
+       <div class="sc-data">
+        <span>
+         $24,500
+        </span>
+        <p>
+         Total Invoiced
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="dash-row">
+      <div class="dash-col">
+       <div class="dash-card">
+        <div class="dc-head">
+         <h3>
+          Active Projects
+         </h3>
+         <a onclick="switchSection('projects')" style="cursor:pointer">
+          View All &rarr;
+         </a>
+        </div>
+        <div class="proj-list">
+         <div class="proj-item">
+          <div class="pi-info">
+           <span class="pi-dot" style="background:var(--v3)">
+           </span>
+           <div>
+            <strong>
+             Brand Identity Redesign
+            </strong>
+            <span>
+             Due Jun 15, 2026
+            </span>
+           </div>
+          </div>
+          <div class="pi-right">
+           <div class="pi-prog">
+            <div class="pip-bar" style="width:75%;background:var(--v3)">
+            </div>
+           </div>
+           <span>
+            75%
+           </span>
+          </div>
+         </div>
+         <div class="proj-item">
+          <div class="pi-info">
+           <span class="pi-dot" style="background:var(--blue)">
+           </span>
+           <div>
+            <strong>
+             E-commerce Website
+            </strong>
+            <span>
+             Due Jul 1, 2026
+            </span>
+           </div>
+          </div>
+          <div class="pi-right">
+           <div class="pi-prog">
+            <div class="pip-bar" style="width:45%;background:var(--blue)">
+            </div>
+           </div>
+           <span>
+            45%
+           </span>
+          </div>
+         </div>
+         <div class="proj-item">
+          <div class="pi-info">
+           <span class="pi-dot" style="background:var(--pink)">
+           </span>
+           <div>
+            <strong>
+             Marketing Campaign
+            </strong>
+            <span>
+             Due Jun 30, 2026
+            </span>
+           </div>
+          </div>
+          <div class="pi-right">
+           <div class="pi-prog">
+            <div class="pip-bar" style="width:90%;background:var(--pink)">
+            </div>
+           </div>
+           <span>
+            90%
+           </span>
+          </div>
+         </div>
+         <div class="proj-item">
+          <div class="pi-info">
+           <span class="pi-dot" style="background:var(--gold)">
+           </span>
+           <div>
+            <strong>
+             Mobile App Design
+            </strong>
+            <span>
+             Due Aug 10, 2026
+            </span>
+           </div>
+          </div>
+          <div class="pi-right">
+           <div class="pi-prog">
+            <div class="pip-bar" style="width:20%;background:var(--gold)">
+            </div>
+           </div>
+           <span>
+            20%
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="dash-col">
+       <div class="dash-card">
+        <div class="dc-head">
+         <h3>
+          Recent Activity
+         </h3>
+        </div>
+        <div class="activity-list">
+         <div class="act-item">
+          <div class="act-dot" style="background:var(--v3)">
+          </div>
+          <div>
+           <p>
+            Logo draft uploaded by Jane D.
+           </p>
+           <span>
+            2 hours ago
+           </span>
+          </div>
+         </div>
+         <div class="act-item">
+          <div class="act-dot" style="background:var(--blue)">
+          </div>
+          <div>
+           <p>
+            Homepage wireframe approved
+           </p>
+           <span>
+            5 hours ago
+           </span>
+          </div>
+         </div>
+         <div class="act-item">
+          <div class="act-dot" style="background:var(--pink)">
+          </div>
+          <div>
+           <p>
+            Invoice #INV-2026-08 sent
+           </p>
+           <span>
+            Yesterday
+           </span>
+          </div>
+         </div>
+         <div class="act-item">
+          <div class="act-dot" style="background:var(--gold)">
+          </div>
+          <div>
+           <p>
+            New message from Emily C.
+           </p>
+           <span>
+            2 days ago
+           </span>
+          </div>
+         </div>
+         <div class="act-item">
+          <div class="act-dot" style="background:var(--green)">
+          </div>
+          <div>
+           <p>
+            Campaign analytics report ready
+           </p>
+           <span>
+            3 days ago
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="dash-card">
+        <div class="dc-head">
+         <h3>
+          Upcoming Deadlines
+         </h3>
+        </div>
+        <div class="deadline-list">
+         <div class="dl-item">
+          <span class="dl-date urgent">
+           Jun 15
+          </span>
+          <span>
+           Brand Identity Final
+          </span>
+         </div>
+         <div class="dl-item">
+          <span class="dl-date soon">
+           Jun 30
+          </span>
+          <span>
+           Campaign Launch
+          </span>
+         </div>
+         <div class="dl-item">
+          <span class="dl-date">
+           Jul 1
+          </span>
+          <span>
+           E-commerce Go-live
+          </span>
+         </div>
+         <div class="dl-item">
+          <span class="dl-date">
+           Aug 10
+          </span>
+          <span>
+           App Design Delivery
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- PROJECTS -->
+    <div class="ds-section" id="sec-projects">
+     <div class="ds-head">
+      <div>
+       <h1>
+        Projects
+       </h1>
+       <p>
+        Manage and track all your projects.
+       </p>
+      </div>
+      <button class="btn-new" id="newProjectBtn">
+       + New Project
+      </button>
+     </div>
+     <div class="proj-cards" id="projCards">
+      <div class="pcard">
+       <div class="pcard-top">
+        <span class="pcard-status active">
+         Active
+        </span>
+        <span class="pcard-date">
+         Due Jun 15
+        </span>
+       </div>
+       <h3>
+        Brand Identity Redesign
+       </h3>
+       <p>
+        Full brand overhaul including logo, color system, typography, and brand guidelines.
+       </p>
+       <div class="pcard-prog">
+        <div class="pcp-bar" style="width:75%;background:var(--v3)">
+        </div>
+       </div>
+       <div class="pcard-foot">
+        <span>
+         75% complete
+        </span>
+        <div class="pcard-team">
+         <div class="pt-av">
+          JD
+         </div>
+         <div class="pt-av">
+          JS
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="pcard">
+       <div class="pcard-top">
+        <span class="pcard-status active">
+         Active
+        </span>
+        <span class="pcard-date">
+         Due Jul 1
+        </span>
+       </div>
+       <h3>
+        E-commerce Website
+       </h3>
+       <p>
+        Full-stack e-commerce platform with product management, cart, and payment integration.
+       </p>
+       <div class="pcard-prog">
+        <div class="pcp-bar" style="width:45%;background:var(--blue)">
+        </div>
+       </div>
+       <div class="pcard-foot">
+        <span>
+         45% complete
+        </span>
+        <div class="pcard-team">
+         <div class="pt-av">
+          EC
+         </div>
+         <div class="pt-av">
+          JS
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="pcard">
+       <div class="pcard-top">
+        <span class="pcard-status review">
+         Review
+        </span>
+        <span class="pcard-date">
+         Due Jun 30
+        </span>
+       </div>
+       <h3>
+        Marketing Campaign
+       </h3>
+       <p>
+        Multi-channel digital campaign across Google, Meta, and LinkedIn targeting key demographics.
+       </p>
+       <div class="pcard-prog">
+        <div class="pcp-bar" style="width:90%;background:var(--pink)">
+        </div>
+       </div>
+       <div class="pcard-foot">
+        <span>
+         90% complete
+        </span>
+        <div class="pcard-team">
+         <div class="pt-av">
+          JD
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="pcard">
+       <div class="pcard-top">
+        <span class="pcard-status active">
+         Active
+        </span>
+        <span class="pcard-date">
+         Due Aug 10
+        </span>
+       </div>
+       <h3>
+        Mobile App Design
+       </h3>
+       <p>
+        iOS and Android app design with full interactive prototype and developer handoff documentation.
+       </p>
+       <div class="pcard-prog">
+        <div class="pcp-bar" style="width:20%;background:var(--gold)">
+        </div>
+       </div>
+       <div class="pcard-foot">
+        <span>
+         20% complete
+        </span>
+        <div class="pcard-team">
+         <div class="pt-av">
+          JS
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- MESSAGES -->
+    <div class="ds-section" id="sec-messages">
+     <div class="ds-head">
+      <h1>
+       Messages
+      </h1>
+     </div>
+     <div class="msg-wrap">
+      <div class="msg-list" id="msgList">
+       <div class="msg-item active" data-contact="Jane Doe" data-init="JD">
+        <div class="msg-av" style="background:var(--v)">
+         JD
+        </div>
+        <div class="msg-info">
+         <strong>
+          Jane Doe
+         </strong>
+         <span>
+          Logo options are ready...
+         </span>
+         <div class="msg-time">
+          2h ago
+         </div>
+        </div>
+        <div class="msg-unread">
+         2
+        </div>
+       </div>
+       <div class="msg-item" data-contact="John Smith" data-init="JS">
+        <div class="msg-av" style="background:var(--cyan)">
+         JS
+        </div>
+        <div class="msg-info">
+         <strong>
+          John Smith
+         </strong>
+         <span>
+          Wireframes uploaded
+         </span>
+         <div class="msg-time">
+          5h ago
+         </div>
+        </div>
+       </div>
+       <div class="msg-item" data-contact="Emily Clark" data-init="EC">
+        <div class="msg-av" style="background:var(--pink)">
+         EC
+        </div>
+        <div class="msg-info">
+         <strong>
+          Emily Clark
+         </strong>
+         <span>
+          Campaign report ready
+         </span>
+         <div class="msg-time">
+          1d ago
+         </div>
+        </div>
+        <div class="msg-unread">
+         1
+        </div>
+       </div>
+       <div class="msg-item" data-contact="CG Agency Team" data-init="CG">
+        <div class="msg-av" style="background:var(--gold)">
+         CG
+        </div>
+        <div class="msg-info">
+         <strong>
+          CG Agency Team
+         </strong>
+         <span>
+          Welcome to your portal!
+         </span>
+         <div class="msg-time">
+          3d ago
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="msg-chat">
+       <div class="mc-head">
+        <div class="mc-av" id="mcHeadAv">
+         JD
+        </div>
+        <div>
+         <strong id="mcHeadName">
+          Jane Doe
+         </strong>
+         <span id="mcHeadStatus">
+          Creative Director &middot; Online
+         </span>
+        </div>
+       </div>
+       <div class="mc-messages" id="mcMessages">
+        <div class="mc-msg them">
+         <div class="mc-bubble">
+          Hi! The logo options are ready for your review. I've uploaded 3 concepts to the files section.
+         </div>
+         <span>
+          2:30 PM
+         </span>
+        </div>
+        <div class="mc-msg them">
+         <div class="mc-bubble">
+          Let me know which direction feels right 🎨
+         </div>
+         <span>
+          2:31 PM
+         </span>
+        </div>
+        <div class="mc-msg me">
+         <div class="mc-bubble">
+          These look amazing! I'm leaning towards concept 2. Can we make the font slightly bolder?
+         </div>
+         <span>
+          3:15 PM
+         </span>
+        </div>
+        <div class="mc-msg them">
+         <div class="mc-bubble">
+          Absolutely! I'll have the updated version ready by tomorrow morning.
+         </div>
+         <span>
+          3:20 PM
+         </span>
+        </div>
+       </div>
+       <div class="mc-input">
+        <input autocomplete="off" id="mcInput" placeholder="Type a message..." type="text">
+        <button id="mcSend">
+         &rarr;
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- FILES -->
+    <div class="ds-section" id="sec-files">
+     <div class="ds-head">
+      <div>
+       <h1>
+        Files
+       </h1>
+       <p>
+        All project files in one place.
+       </p>
+      </div>
+      <button class="btn-new" id="uploadBtn">
+       + Upload File
+      </button>
+     </div>
+     <div class="files-grid">
+      <div class="file-card">
+       <div class="fc-icon" style="background:var(--vdim);color:var(--v3)">
+        PDF
+       </div>
+       <div class="fc-info">
+        <strong>
+         Brand_Guidelines_v2.pdf
+        </strong>
+        <span>
+         2.4 MB &middot; May 28, 2026
+        </span>
+       </div>
+       <button class="fc-dl">
+        &darr;
+       </button>
+      </div>
+      <div class="file-card">
+       <div class="fc-icon" style="background:rgba(138,180,194,.1);color:var(--blue)">
+        FIG
+       </div>
+       <div class="fc-info">
+        <strong>
+         Homepage_Wireframes.fig
+        </strong>
+        <span>
+         8.1 MB &middot; May 25, 2026
+        </span>
+       </div>
+       <button class="fc-dl">
+        &darr;
+       </button>
+      </div>
+      <div class="file-card">
+       <div class="fc-icon" style="background:rgba(224,123,90,.1);color:var(--coral)">
+        ZIP
+       </div>
+       <div class="fc-info">
+        <strong>
+         Logo_Concepts_v3.zip
+        </strong>
+        <span>
+         12.6 MB &middot; May 22, 2026
+        </span>
+       </div>
+       <button class="fc-dl">
+        &darr;
+       </button>
+      </div>
+      <div class="file-card">
+       <div class="fc-icon" style="background:rgba(232,199,106,.1);color:var(--gold)">
+        XLS
+       </div>
+       <div class="fc-info">
+        <strong>
+         Campaign_Report_Q2.xlsx
+        </strong>
+        <span>
+         1.8 MB &middot; May 20, 2026
+        </span>
+       </div>
+       <button class="fc-dl">
+        &darr;
+       </button>
+      </div>
+      <div class="file-card">
+       <div class="fc-icon" style="background:rgba(126,200,160,.1);color:var(--green)">
+        MP4
+       </div>
+       <div class="fc-info">
+        <strong>
+         Intro_Animation_v1.mp4
+        </strong>
+        <span>
+         45.2 MB &middot; May 18, 2026
+        </span>
+       </div>
+       <button class="fc-dl">
+        &darr;
+       </button>
+      </div>
+      <div class="file-card">
+       <div class="fc-icon" style="background:rgba(138,180,194,.1);color:var(--cyan)">
+        PDF
+       </div>
+       <div class="fc-info">
+        <strong>
+         Invoice_INV-2026-08.pdf
+        </strong>
+        <span>
+         0.3 MB &middot; May 15, 2026
+        </span>
+       </div>
+       <button class="fc-dl">
+        &darr;
+       </button>
+      </div>
+     </div>
+    </div>
+    <!-- INVOICES -->
+    <div class="ds-section" id="sec-invoices">
+     <div class="ds-head">
+      <h1>
+       Invoices
+      </h1>
+     </div>
+     <div class="inv-table">
+      <div class="it-head">
+       <span>
+        Invoice
+       </span>
+       <span>
+        Project
+       </span>
+       <span>
+        Amount
+       </span>
+       <span>
+        Date
+       </span>
+       <span>
+        Status
+       </span>
+       <span>
+        Action
+       </span>
+      </div>
+      <div class="it-row">
+       <span>
+        #INV-2026-08
+       </span>
+       <span>
+        Brand Identity
+       </span>
+       <span>
+        $4,500
+       </span>
+       <span>
+        May 15
+       </span>
+       <span class="inv-paid">
+        Paid
+       </span>
+       <button class="inv-btn">
+        Download
+       </button>
+      </div>
+      <div class="it-row">
+       <span>
+        #INV-2026-07
+       </span>
+       <span>
+        E-commerce Site
+       </span>
+       <span>
+        $8,000
+       </span>
+       <span>
+        Apr 30
+       </span>
+       <span class="inv-paid">
+        Paid
+       </span>
+       <button class="inv-btn">
+        Download
+       </button>
+      </div>
+      <div class="it-row">
+       <span>
+        #INV-2026-09
+       </span>
+       <span>
+        Marketing Campaign
+       </span>
+       <span>
+        $6,000
+       </span>
+       <span>
+        Jun 1
+       </span>
+       <span class="inv-pending">
+        Pending
+       </span>
+       <button class="inv-btn pay">
+        Pay Now
+       </button>
+      </div>
+      <div class="it-row">
+       <span>
+        #INV-2026-10
+       </span>
+       <span>
+        Mobile App Design
+       </span>
+       <span>
+        $6,000
+       </span>
+       <span>
+        Jun 15
+       </span>
+       <span class="inv-upcoming">
+        Upcoming
+       </span>
+       <button class="inv-btn">
+        View
+       </button>
+      </div>
+     </div>
+    </div>
+    <!-- ANALYTICS -->
+    <div class="ds-section" id="sec-analytics">
+     <div class="ds-head">
+      <h1>
+       Analytics
+      </h1>
+     </div>
+     <div class="an-cards">
+      <div class="an-card">
+       <h4>
+        Website Traffic
+       </h4>
+       <div class="an-chart" id="trafficChart">
+       </div>
+       <div class="an-footer">
+        <span class="an-up">
+         &uarr; 23%
+        </span>
+        vs last month
+       </div>
+      </div>
+      <div class="an-card">
+       <h4>
+        Conversion Rate
+       </h4>
+       <div class="an-big">
+        4.7
+        <span>
+         %
+        </span>
+       </div>
+       <div class="an-footer">
+        <span class="an-up">
+         &uarr; 0.8%
+        </span>
+        vs last month
+       </div>
+      </div>
+      <div class="an-card">
+       <h4>
+        Campaign Reach
+       </h4>
+       <div class="an-big">
+        128
+        <span>
+         K
+        </span>
+       </div>
+       <div class="an-footer">
+        <span class="an-up">
+         &uarr; 41%
+        </span>
+        vs last month
+       </div>
+      </div>
+      <div class="an-card">
+       <h4>
+        SEO Score
+       </h4>
+       <div class="an-big">
+        92
+        <span>
+         /100
+        </span>
+       </div>
+       <div class="an-footer">
+        <span class="an-up">
+         &uarr; 7pts
+        </span>
+        this month
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- SETTINGS -->
+    <div class="ds-section" id="sec-settings">
+     <div class="ds-head">
+      <h1>
+       Settings
+      </h1>
+     </div>
+     <div class="set-wrap">
+      <div class="set-card">
+       <h3>
+        Profile Information
+       </h3>
+       <div class="set-grid">
+        <div class="set-field">
+         <label>
+          First Name
+         </label>
+         <input id="setFirst" type="text" value="MD Saidul Islam">
+        </div>
+        <div class="set-field">
+         <label>
+          Last Name
+         </label>
+         <input id="setLast" type="text" value="Ratin">
+        </div>
+        <div class="set-field">
+         <label>
+          Email
+         </label>
+         <input id="setEmail" type="email" value="mdsaidulislamratin967@gmail.com">
+        </div>
+        <div class="set-field">
+         <label>
+          Company
+         </label>
+         <input id="setCompany" type="text" value="CG Agency">
+        </div>
+       </div>
+       <button class="btn-save" id="saveProfile">
+        Save Changes
+       </button>
+       <div class="save-msg" id="saveMsg">
+       </div>
+      </div>
+      <div class="set-card">
+       <h3>
+        Notifications
+       </h3>
+       <div class="set-toggles">
+        <div class="st-row">
+         <span>
+          Project Updates
+         </span>
+         <label class="toggle">
+          <input checked type="checkbox">
+          <span class="tg-slider">
+          </span>
+         </label>
+        </div>
+        <div class="st-row">
+         <span>
+          New Messages
+         </span>
+         <label class="toggle">
+          <input checked type="checkbox">
+          <span class="tg-slider">
+          </span>
+         </label>
+        </div>
+        <div class="st-row">
+         <span>
+          Invoice Reminders
+         </span>
+         <label class="toggle">
+          <input checked type="checkbox">
+          <span class="tg-slider">
+          </span>
+         </label>
+        </div>
+        <div class="st-row">
+         <span>
+          Marketing Emails
+         </span>
+         <label class="toggle">
+          <input type="checkbox">
+          <span class="tg-slider">
+          </span>
+         </label>
+        </div>
+       </div>
+      </div>
+      <div class="set-card">
+       <h3>
+        Change Password
+       </h3>
+       <div class="set-grid">
+        <div class="set-field">
+         <label>
+          Current Password
+         </label>
+         <input id="curPw" placeholder="Enter current password" type="password">
+        </div>
+        <div class="set-field">
+         <label>
+          New Password
+         </label>
+         <input id="newPw" placeholder="Min. 8 characters" type="password">
+        </div>
+       </div>
+       <button class="btn-save" id="savePw">
+        Update Password
+       </button>
+       <div class="save-msg" id="savePwMsg">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- NEW PROJECT MODAL -->
+  <div class="modal-overlay" id="projModal">
+   <div class="modal-box-dash">
+    <button class="modal-close-dash" id="closeProjModal">
+     ✕
+    </button>
+    <h2>
+     New Project
+    </h2>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:20px">
+     Fill in the details to create a new project.
+    </p>
+    <div class="set-field" style="margin-bottom:14px">
+     <label>
+      Project Title
+     </label>
+     <input id="npTitle" placeholder="e.g. Website Redesign" type="text">
+    </div>
+    <div class="set-field" style="margin-bottom:14px">
+     <label>
+      Due Date
+     </label>
+     <input id="npDue" placeholder="e.g. Jul 15, 2026" type="text">
+    </div>
+    <div class="set-field" style="margin-bottom:20px">
+     <label>
+      Status
+     </label>
+     <select id="npStatus" style="padding:11px 14px;border-radius:9px;border:1px solid var(--border);background:var(--bg3);color:var(--white);font-family:var(--fh);font-size:13px;outline:none;width:100%">
+      <option value="active">
+       Active
+      </option>
+      <option value="review">
+       Review
+      </option>
+      <option value="done">
+       Done
+      </option>
+     </select>
+    </div>
+    <button class="btn-new" id="createProjectBtn" style="width:100%;justify-content:center;padding:12px">
+     Create Project
+    </button>
+    <div class="save-msg" id="projMsg" style="margin-top:10px">
+    </div>
+   </div>
+  </div>
+  <script defer src="dashboard.js">
+  </script>
+ </body>
+</html>

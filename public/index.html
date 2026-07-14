@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="CG Agency &mdash; Premium Digital Creative Studio. Brand identities, web experiences & growth strategies." name="description">
+  <title>
+   CG Agency &mdash; Digital Creative Studio
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+ </head>
+ <body>
+  <div class="noise">
+  </div>
+  <div class="cur-outer" id="curOuter">
+  </div>
+  <div class="cur-inner" id="curInner">
+  </div>
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+   <div class="ld-glow">
+   </div>
+   <div class="ld-inner">
+    <div class="ld-shape">
+     <svg class="ld-ring" viewbox="0 0 100 100">
+      <circle class="ld-ring-track" cx="50" cy="50" r="44">
+      </circle>
+      <circle class="ld-ring-arc" cx="50" cy="50" r="44">
+      </circle>
+     </svg>
+     <div class="ld-diamond">
+     </div>
+    </div>
+    <div class="ld-logo">
+     CG
+     <span>
+      .
+     </span>
+    </div>
+    <div class="ld-bar">
+     <div class="ld-prog" id="ldProg">
+     </div>
+    </div>
+    <div class="ld-pct" id="ldPct">
+     0%
+    </div>
+   </div>
+  </div>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+   <a class="logo" href="#home">
+    CG
+    <span>
+     Agency
+    </span>
+   </a>
+   <nav class="nav-links">
+    <a href="#home">
+     Home
+    </a>
+    <a href="#services">
+     Services
+    </a>
+    <a href="#portfolio">
+     Work
+    </a>
+    <a href="#process">
+     Process
+    </a>
+    <a href="#team">
+     Team
+    </a>
+    <a href="#pricing">
+     Pricing
+    </a>
+    <a href="#testimonials">
+     Reviews
+    </a>
+    <a href="#faq">
+     FAQ
+    </a>
+    <a href="#contact">
+     Contact
+    </a>
+   </nav>
+   <div class="nav-right">
+    <a class="btn-login" href="login.html">
+     Login
+    </a>
+    <a class="btn-register" href="login.html#register">
+     Get Started &nearrow;
+    </a>
+    <button class="burger" id="burger">
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+   </div>
+   <div class="mobile-panel" id="mobilePanel">
+    <div class="mp-links">
+     <a href="#home">
+      Home
+     </a>
+     <a href="#services">
+      Services
+     </a>
+     <a href="#portfolio">
+      Work
+     </a>
+     <a href="#process">
+      Process
+     </a>
+     <a href="#team">
+      Team
+     </a>
+     <a href="#pricing">
+      Pricing
+     </a>
+     <a href="#testimonials">
+      Reviews
+     </a>
+     <a href="#faq">
+      FAQ
+     </a>
+     <a href="#contact">
+      Contact
+     </a>
+     <a class="mp-login" href="login.html">
+      Login &rarr;
+     </a>
+    </div>
+   </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero" id="home">
+   <canvas id="heroCanvas">
+   </canvas>
+   <div class="hero-grid-bg">
+   </div>
+   <div class="hero-glow-orb">
+   </div>
+   <div class="hero-glow-orb2">
+   </div>
+   <div class="hero-glow-orb3">
+   </div>
+   <div class="hero-inner">
+    <!-- LEFT -->
+    <div class="hero-left">
+     <div class="hero-badge" data-aos>
+      <span class="hb-dot">
+      </span>
+      Available for Projects &mdash; 2026
+     </div>
+     <h1 class="hero-h" data-aos data-delay="100">
+      <span class="row-plain">
+       We Create
+      </span>
+      <span class="row-italic">
+       <em id="rotWord">
+        Extraordinary
+       </em>
+      </span>
+      <span class="row-plain">
+       Digital
+       <span class="outline-text">
+        Worlds
+       </span>
+      </span>
+     </h1>
+     <p class="hero-sub" data-aos data-delay="250">
+      CG Agency is a boutique creative studio crafting premium brand identities, immersive web experiences, and growth-focused digital strategies for ambitious brands.
+     </p>
+     <div class="hero-btns" data-aos data-delay="380">
+      <a class="btn-primary" href="#portfolio" onclick="event.preventDefault();scrollToSection('portfolio')">
+       Explore Our Work
+       <span class="ba">
+        &rarr;
+       </span>
+      </a>
+      <a class="btn-ghost" href="#contact" onclick="event.preventDefault();scrollToSection('contact')">
+       Start a Project
+      </a>
+     </div>
+     <!-- Stats bar -->
+     <div class="hero-stats" data-aos data-delay="500">
+      <div class="hs-item">
+       <div class="hs-num">
+        <span class="counter" data-t="240">
+         0
+        </span>
+        <sup>
+         +
+        </sup>
+       </div>
+       <p>
+        Projects
+       </p>
+      </div>
+      <div class="hs-item">
+       <div class="hs-num">
+        <span class="counter" data-t="98">
+         0
+        </span>
+        <sup>
+         %
+        </sup>
+       </div>
+       <p>
+        Satisfaction
+       </p>
+      </div>
+      <div class="hs-item">
+       <div class="hs-num">
+        <span class="counter" data-t="9">
+         0
+        </span>
+        <sup>
+         yr
+        </sup>
+       </div>
+       <p>
+        Experience
+       </p>
+      </div>
+      <div class="hs-item">
+       <div class="hs-num">
+        <span class="counter" data-t="18">
+         0
+        </span>
+        <sup>
+         +
+        </sup>
+       </div>
+       <p>
+        Awards
+       </p>
+      </div>
+     </div>
+    </div>
+    <!-- RIGHT — Visual Card -->
+    <div class="hero-right" data-aos="fade-left" data-delay="200">
+     <div class="hero-visual">
+      <!-- Floating badge TOP -->
+      <div class="hv-float f1">
+       <span class="hv-float-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 2C12 2 17 5 17 11C17 13 16 15 16 15L8 15C8 15 7 13 7 11C7 5 12 2 12 2Z" fill="rgba(232,199,106,0.15)" stroke="#e8c76a" stroke-width="1.6" stroke-linejoin="round"/>
+         <circle cx="12" cy="9.5" r="1.8" fill="#e8c76a"/>
+         <path d="M8 14.5L6 18.5L9 17" stroke="#e8c76a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M16 14.5L18 18.5L15 17" stroke="#e8c76a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+       </span>
+       <div class="hv-float-text">
+        <strong>
+         Project Launched
+        </strong>
+        <span>
+         2 minutes ago
+        </span>
+       </div>
+      </div>
+
+      <!-- Main card -->
+      <div class="hv-card">
+       <div class="hv-winbar">
+        <div class="hv-dots">
+         <span></span><span></span><span></span>
+        </div>
+        <span class="hv-winbar-title">
+         cgagency.app/dashboard
+        </span>
+       </div>
+       <div class="hv-top">
+        <div>
+         <span class="hv-title">
+          Nexus Corp — Growth
+         </span>
+         <span class="hv-subtitle">
+          Q2 2026 Performance
+         </span>
+        </div>
+        <span class="hv-status">
+         <span class="hv-dot">
+         </span>
+         Live
+        </span>
+       </div>
+       <div class="hv-chart-wrap">
+        <svg class="hv-chart" viewBox="0 0 300 110" preserveAspectRatio="none">
+         <defs>
+          <linearGradient id="hvChartFill" x1="0" y1="0" x2="0" y2="1">
+           <stop offset="0%" stop-color="#e8c76a" stop-opacity="0.35"/>
+           <stop offset="100%" stop-color="#e8c76a" stop-opacity="0"/>
+          </linearGradient>
+         </defs>
+         <path class="hv-chart-area" d="M0,85 L25,78 L50,82 L75,60 L100,65 L125,45 L150,50 L175,30 L200,38 L225,20 L250,26 L275,10 L300,15 L300,110 L0,110 Z" fill="url(#hvChartFill)"/>
+         <path class="hv-chart-line" d="M0,85 L25,78 L50,82 L75,60 L100,65 L125,45 L150,50 L175,30 L200,38 L225,20 L250,26 L275,10 L300,15" fill="none"/>
+         <circle class="hv-chart-dot" cx="300" cy="15" r="4"/>
+        </svg>
+        <div class="hv-chart-tooltip">
+         <span>+74%</span>
+         <p>vs last quarter</p>
+        </div>
+       </div>
+       <div class="hv-metrics">
+        <div class="hv-metric">
+         <div class="hv-metric-head">
+          <span class="hv-metric-icon">◈</span>
+          <span class="hv-metric-trend up">↑ 12%</span>
+         </div>
+         <span>74%</span>
+         <p>Engagement</p>
+        </div>
+        <div class="hv-metric">
+         <div class="hv-metric-head">
+          <span class="hv-metric-icon">◎</span>
+          <span class="hv-metric-trend up">↑ 8%</span>
+         </div>
+         <span>3&times;</span>
+         <p>ROI Growth</p>
+        </div>
+        <div class="hv-metric">
+         <div class="hv-metric-head">
+          <span class="hv-metric-icon">◉</span>
+          <span class="hv-metric-trend up">↑ 22%</span>
+         </div>
+         <span>128K</span>
+         <p>Reach</p>
+        </div>
+        <div class="hv-metric">
+         <div class="hv-metric-head">
+          <span class="hv-metric-icon">◫</span>
+          <span class="hv-metric-trend flat">→ 0%</span>
+         </div>
+         <span>99.9%</span>
+         <p>Uptime</p>
+        </div>
+       </div>
+       <div class="hv-tags">
+        <span class="hv-tag">Branding</span>
+        <span class="hv-tag">UI/UX</span>
+        <span class="hv-tag">Dev</span>
+        <span class="hv-tag">SEO</span>
+       </div>
+      </div>
+      <!-- Floating badge BOTTOM -->
+      <div class="hv-float f2">
+       <span class="hv-float-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 3L14.3 9.1L21 9.6L15.9 13.7L17.5 20.2L12 16.6L6.5 20.2L8.1 13.7L3 9.6L9.7 9.1L12 3Z" fill="#e8c76a" stroke="#e8c76a" stroke-width="1" stroke-linejoin="round"/>
+        </svg>
+       </span>
+       <div class="hv-float-text">
+        <strong>
+         5.0 Client Rating
+        </strong>
+        <span>
+         from 50+ reviews
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="scroll-hint">
+    <div class="sh-mouse">
+     <div class="sh-wheel">
+     </div>
+    </div>
+    <span>
+     Scroll
+    </span>
+   </div>
+  </section>
+  <!-- MARQUEE -->
+  <div class="marquee">
+   <div class="mq-track">
+    <span>
+     Brand Identity
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Web Development
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     UI/UX Design
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Motion Design
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     SEO Strategy
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Digital Marketing
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Brand Identity
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Web Development
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     UI/UX Design
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Motion Design
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     SEO Strategy
+    </span>
+    <b>
+     ✦
+    </b>
+    <span>
+     Digital Marketing
+    </span>
+    <b>
+     ✦
+    </b>
+   </div>
+  </div>
+  <!-- SERVICES — enhanced with hover tooltip panels -->
+  <section class="services" id="services">
+   <div class="wrap">
+    <div class="sec-head" data-aos>
+     <span class="tag">
+      What We Do
+     </span>
+     <h2>
+      Services Built
+      <br>
+      for
+      <em>
+       Impact
+      </em>
+     </h2>
+     <p class="sec-sub">
+      Everything your brand needs to dominate the digital space &mdash; under one roof.
+     </p>
+    </div>
+    <div class="svc-list">
+     <div class="svc-row" data-aos data-detail="We build brand systems from the ground up &mdash; logo design, color palettes, typography, brand voice, visual guidelines, and full identity rollout across all touchpoints. Our brands don't just look good; they command attention and build loyalty." data-name="Brand Strategy & Identity" data-num="01" data-stat1="50+" data-stat1-label="Brands Built" data-stat2="4wk" data-stat2-label="Avg. Timeline" data-tags="Logo &middot; Guidelines &middot; Visual Identity &middot; Tone of Voice &middot; Rebranding">
+      <div class="sr-left">
+       <span class="sr-num">
+        01
+       </span>
+       <h3>
+        Brand Strategy & Identity
+       </h3>
+      </div>
+      <p>
+       We build brands that resonate deeply &mdash; from logo to full visual systems and tone of voice.
+      </p>
+      <span class="sr-arr">
+       &nearrow;
+      </span>
+      <div class="svc-detail-panel">
+       <div class="sdp-inner">
+        <div class="sdp-text">
+        </div>
+        <div class="sdp-tags">
+        </div>
+        <div class="sdp-stats">
+         <div class="sdp-stat">
+          <span class="sdp-s1">
+          </span>
+          <p class="sdp-s1l">
+          </p>
+         </div>
+         <div class="sdp-stat">
+          <span class="sdp-s2">
+          </span>
+          <p class="sdp-s2l">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="svc-row" data-aos data-delay="60" data-detail="From wireframes to high-fidelity prototypes, we design interfaces that feel effortless. User research, information architecture, interaction design, usability testing &mdash; we obsess over every detail so your users don't have to think." data-name="UI/UX Design" data-num="02" data-stat1="140+" data-stat1-label="Screens Designed" data-stat2="40%" data-stat2-label="Avg. Engagement Lift" data-tags="Wireframing &middot; Prototyping &middot; User Research &middot; Design Systems &middot; Figma">
+      <div class="sr-left">
+       <span class="sr-num">
+        02
+       </span>
+       <h3>
+        UI/UX Design
+       </h3>
+      </div>
+      <p>
+       Intuitive, beautiful interfaces that delight users and drive measurable engagement results.
+      </p>
+      <span class="sr-arr">
+       &nearrow;
+      </span>
+      <div class="svc-detail-panel">
+       <div class="sdp-inner">
+        <div class="sdp-text">
+        </div>
+        <div class="sdp-tags">
+        </div>
+        <div class="sdp-stats">
+         <div class="sdp-stat">
+          <span class="sdp-s1">
+          </span>
+          <p class="sdp-s1l">
+          </p>
+         </div>
+         <div class="sdp-stat">
+          <span class="sdp-s2">
+          </span>
+          <p class="sdp-s2l">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="svc-row" data-aos data-delay="120" data-detail="We engineer high-performance websites and web apps using modern stacks &mdash; React, Next.js, Node.js, and more. Sub-second load times, pixel-perfect implementation, and scalable architecture that grows with your business." data-name="Web Development" data-num="03" data-stat1="80+" data-stat1-label="Sites Launched" data-stat2="99.9%" data-stat2-label="Avg. Uptime" data-tags="React &middot; Next.js &middot; Node.js &middot; CMS &middot; E-commerce &middot; Performance">
+      <div class="sr-left">
+       <span class="sr-num">
+        03
+       </span>
+       <h3>
+        Web Development
+       </h3>
+      </div>
+      <p>
+       Lightning-fast, pixel-perfect websites and apps engineered for performance and scale.
+      </p>
+      <span class="sr-arr">
+       &nearrow;
+      </span>
+      <div class="svc-detail-panel">
+       <div class="sdp-inner">
+        <div class="sdp-text">
+        </div>
+        <div class="sdp-tags">
+        </div>
+        <div class="sdp-stats">
+         <div class="sdp-stat">
+          <span class="sdp-s1">
+          </span>
+          <p class="sdp-s1l">
+          </p>
+         </div>
+         <div class="sdp-stat">
+          <span class="sdp-s2">
+          </span>
+          <p class="sdp-s2l">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="svc-row" data-aos data-delay="180" data-detail="Performance marketing across Google Ads, Meta, LinkedIn, and programmatic channels. We combine data science with creative storytelling to build campaigns that convert. Average client ROI: 3&times; in the first 90 days." data-name="Digital Marketing" data-num="04" data-stat1="3&times;" data-stat1-label="Avg. ROI" data-stat2="50M+" data-stat2-label="Impressions Served" data-tags="Google Ads &middot; Meta &middot; LinkedIn &middot; Email &middot; Analytics &middot; A/B Testing">
+      <div class="sr-left">
+       <span class="sr-num">
+        04
+       </span>
+       <h3>
+        Digital Marketing
+       </h3>
+      </div>
+      <p>
+       Data-driven campaigns that amplify reach, generate leads, and accelerate revenue growth.
+      </p>
+      <span class="sr-arr">
+       &nearrow;
+      </span>
+      <div class="svc-detail-panel">
+       <div class="sdp-inner">
+        <div class="sdp-text">
+        </div>
+        <div class="sdp-tags">
+        </div>
+        <div class="sdp-stats">
+         <div class="sdp-stat">
+          <span class="sdp-s1">
+          </span>
+          <p class="sdp-s1l">
+          </p>
+         </div>
+         <div class="sdp-stat">
+          <span class="sdp-s2">
+          </span>
+          <p class="sdp-s2l">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="svc-row" data-aos data-delay="240" data-detail="Sustainable organic growth through technical SEO, keyword strategy, content architecture, and authoritative publishing. We don't chase algorithms &mdash; we build assets that rank and convert for years, not months." data-name="SEO & Content" data-num="05" data-stat1="92" data-stat1-label="Avg. SEO Score" data-stat2="2&times; " data-stat2-label="Avg. Traffic Growth" data-tags="Technical SEO &middot; Content Strategy &middot; Link Building &middot; CRO &middot; Copywriting">
+      <div class="sr-left">
+       <span class="sr-num">
+        05
+       </span>
+       <h3>
+        SEO & Content
+       </h3>
+      </div>
+      <p>
+       Organic visibility strategies and compelling content that converts audiences into clients.
+      </p>
+      <span class="sr-arr">
+       &nearrow;
+      </span>
+      <div class="svc-detail-panel">
+       <div class="sdp-inner">
+        <div class="sdp-text">
+        </div>
+        <div class="sdp-tags">
+        </div>
+        <div class="sdp-stats">
+         <div class="sdp-stat">
+          <span class="sdp-s1">
+          </span>
+          <p class="sdp-s1l">
+          </p>
+         </div>
+         <div class="sdp-stat">
+          <span class="sdp-s2">
+          </span>
+          <p class="sdp-s2l">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="svc-row" data-aos data-delay="300" data-detail="From UI micro-interactions to full cinematic brand films &mdash; we bring your brand to life through motion. After Effects, Lottie, GSAP, WebGL. Every frame is crafted to evoke emotion and reinforce your brand story." data-name="Motion & Animation" data-num="06" data-stat1="60+" data-stat1-label="Animations Delivered" data-stat2="&infin;" data-stat2-label="Creative Possibilities" data-tags="After Effects &middot; GSAP &middot; Lottie &middot; WebGL &middot; 3D &middot; Brand Films">
+      <div class="sr-left">
+       <span class="sr-num">
+        06
+       </span>
+       <h3>
+        Motion & Animation
+       </h3>
+      </div>
+      <p>
+       Cinematic animations and interactive micro-experiences that make your brand unforgettable.
+      </p>
+      <span class="sr-arr">
+       &nearrow;
+      </span>
+      <div class="svc-detail-panel">
+       <div class="sdp-inner">
+        <div class="sdp-text">
+        </div>
+        <div class="sdp-tags">
+        </div>
+        <div class="sdp-stats">
+         <div class="sdp-stat">
+          <span class="sdp-s1">
+          </span>
+          <p class="sdp-s1l">
+          </p>
+         </div>
+         <div class="sdp-stat">
+          <span class="sdp-s2">
+          </span>
+          <p class="sdp-s2l">
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- VIDEO — changed to a relevant creative agency showreel -->
+  <section class="video-section" id="video">
+   <div class="wrap">
+    <div class="vs-inner" data-aos>
+     <div class="vs-text">
+      <span class="tag">
+       Our Process
+      </span>
+      <h2>
+       See How We
+       <br>
+       <em>
+        Work & Create
+       </em>
+      </h2>
+      <p>
+       Watch how our team transforms raw ideas into world-class digital experiences that drive real growth for ambitious brands worldwide.
+      </p>
+      <a class="btn-primary" href="#contact" onclick="event.preventDefault();scrollToSection('contact')">
+       Work With Us
+       <span class="ba">
+        &rarr;
+       </span>
+      </a>
+     </div>
+     <div class="vs-player">
+      <div class="vp-thumb" id="vpThumb">
+       <div class="vp-overlay">
+       </div>
+       <div class="vp-content">
+        <div class="play-btn" id="playBtn">
+         <div class="play-ring">
+         </div>
+         <div class="play-ring2">
+         </div>
+         <div class="play-icon">
+          ▶
+         </div>
+        </div>
+        <div class="vp-label">
+         <span>
+          CG Agency &mdash; Showreel 2026
+         </span>
+         <span>
+          3:12
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="vp-embed hidden" id="vpEmbed">
+       <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-src="https://www.youtube.com/embed/aqz-KE-bpKQ?autoplay=1&rel=0&modestbranding=1" frameborder="0" id="vpIframe" src title="CG Agency Showreel">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- PORTFOLIO — enhanced case study modals -->
+  <section class="portfolio" id="portfolio">
+   <div class="wrap">
+    <div class="pf-top" data-aos>
+     <div>
+      <span class="tag">
+       Our Work
+      </span>
+      <h2>
+       Selected
+       <em>
+        Projects
+       </em>
+      </h2>
+     </div>
+     <div class="pf-filters">
+      <button class="pf-btn active" data-f="all">
+       All
+      </button>
+      <button class="pf-btn" data-f="design">
+       Design
+      </button>
+      <button class="pf-btn" data-f="dev">
+       Dev
+      </button>
+      <button class="pf-btn" data-f="marketing">
+       Marketing
+      </button>
+     </div>
+    </div>
+    <div class="pf-grid" id="pfGrid">
+     <article class="pf-card" data-aos data-c="design" data-client="Nexus Corp" data-desc="A complete brand and website overhaul for a Series B tech company. We rebuilt their identity from scratch &mdash; new logo, color system, typography, and a high-performance Next.js website. The result was a 74% jump in session engagement, 50% lower bounce rate, and a 3&times; increase in qualified lead volume." data-results="74% Engagement &uarr; &middot; 50% Bounce Rate &darr; &middot; 3&times; Leads &middot; 99.9% Uptime" data-stack="Figma &middot; Next.js &middot; Tailwind &middot; Vercel &middot; Framer Motion" data-tag="Brand Design" data-title="Website Redesign" data-year="2025">
+      <div class="pfc-glow" style="--g:#c9a84c">
+      </div>
+      <span class="pfc-tag">
+       Design
+      </span>
+      <span class="pfc-num">
+       01
+      </span>
+      <h3>
+       Website Redesign
+      </h3>
+      <p>
+       Modern responsive website for a growing brand.
+      </p>
+      <button class="pfc-btn">
+       View Case Study &rarr;
+      </button>
+     </article>
+     <article class="pf-card pf-tall" data-aos data-c="design" data-client="Velox Labs" data-delay="80" data-desc="Built a 140+ component design system for a rapidly scaling SaaS platform. We established design tokens, accessibility standards (WCAG 2.1 AA), and a full Figma library with developer handoff specs. Engineers cut implementation time by 60% and product consistency improved dramatically across 8 product lines." data-results="140+ Components &middot; 60% Faster Dev &middot; WCAG AA &middot; 8 Product Lines" data-stack="Figma &middot; Storybook &middot; React &middot; Styled Components &middot; Zeroheight" data-tag="Design Systems" data-title="UI/UX Design System" data-year="2025">
+      <div class="pfc-glow" style="--g:#e8c76a">
+      </div>
+      <span class="pfc-tag">
+       UI/UX
+      </span>
+      <span class="pfc-num">
+       02
+      </span>
+      <h3>
+       UI/UX Design System
+      </h3>
+      <p>
+       Scalable interface design with 40% better user engagement.
+      </p>
+      <button class="pfc-btn">
+       View Case Study &rarr;
+      </button>
+     </article>
+     <article class="pf-card" data-aos data-c="marketing" data-client="Bright Digital" data-delay="160" data-desc="A 90-day multi-channel growth campaign spanning Google, Meta, LinkedIn, and programmatic display. We restructured the entire funnel &mdash; new creative assets, audience segmentation, bid strategies, and landing pages. Generated 3&times; ROI with a 41% decrease in cost-per-acquisition and 128K new users reached." data-results="3&times; ROI &middot; 41% CPA &darr; &middot; 128K Reach &middot; 90 Days" data-stack="Google Ads &middot; Meta &middot; LinkedIn &middot; HubSpot &middot; Google Analytics 4" data-tag="Performance Marketing" data-title="Growth Campaign" data-year="2025">
+      <div class="pfc-glow" style="--g:#a8863a">
+      </div>
+      <span class="pfc-tag">
+       Marketing
+      </span>
+      <span class="pfc-num">
+       03
+      </span>
+      <h3>
+       Growth Campaign
+      </h3>
+      <p>
+       Smart marketing delivering 3&times; ROI in 90 days.
+      </p>
+      <button class="pfc-btn">
+       View Case Study &rarr;
+      </button>
+     </article>
+     <article class="pf-card" data-aos data-c="dev" data-client="TechStream" data-desc="Architected and delivered a high-performance SaaS platform now serving 50,000+ daily active users. Sub-200ms API response times, 99.98% uptime, real-time collaboration features, and a microservices architecture on AWS. Scaled from 0 to 50K users in 6 months post-launch." data-results="50K+ DAU &middot; 99.98% Uptime &middot; &lt;200ms Response &middot; 0&rarr;50K in 6mo" data-stack="React &middot; Node.js &middot; PostgreSQL &middot; AWS &middot; Redis &middot; Stripe" data-tag="Full-Stack Dev" data-title="Web Application" data-year="2026">
+      <div class="pfc-glow" style="--g:#c9a84c">
+      </div>
+      <span class="pfc-tag">
+       Dev
+      </span>
+      <span class="pfc-num">
+       04
+      </span>
+      <h3>
+       Web Application
+      </h3>
+      <p>
+       SaaS app for 50K+ daily users with 99.98% uptime.
+      </p>
+      <button class="pfc-btn">
+       View Case Study &rarr;
+      </button>
+     </article>
+     <article class="pf-card pf-wide" data-aos data-c="design" data-client="Zova Financial" data-delay="80" data-desc="Designed a mobile-first fintech app for iOS and Android covering personal finance, investment tracking, and peer payments. Full UX audit, user testing with 200+ participants, accessibility-first approach, and a complete interactive prototype for developer handoff. App Store rating: 4.9&starf; with 50K+ downloads in 3 months." data-results="4.9&starf; App Store &middot; 50K+ Downloads &middot; 200+ User Tests &middot; iOS + Android" data-stack="Figma &middot; Principle &middot; ProtoPie &middot; iOS HIG &middot; Material You" data-tag="Mobile App Design" data-title="Fintech App Design" data-year="2026">
+      <div class="pfc-glow" style="--g:#e8c76a">
+      </div>
+      <span class="pfc-tag">
+       App
+      </span>
+      <span class="pfc-num">
+       05
+      </span>
+      <h3>
+       Fintech App Design
+      </h3>
+      <p>
+       4.9&starf; rated fintech app with accessibility-first design.
+      </p>
+      <button class="pfc-btn">
+       View Case Study &rarr;
+      </button>
+     </article>
+     <article class="pf-card" data-aos data-c="marketing" data-client="GrowthHQ" data-delay="160" data-desc="A fully integrated 360&deg; brand awareness campaign spanning social media, OOH advertising, email, influencer partnerships, and digital PR. We created 120+ unique creative assets, a campaign microsite, and a real-time analytics dashboard. Result: 200% brand awareness lift, 60,000 new followers, and $2M in attributed pipeline." data-results="200% Awareness &uarr; &middot; 60K New Followers &middot; 120+ Assets &middot; $2M Pipeline" data-stack="Adobe CC &middot; Meta &middot; TikTok &middot; OOH &middot; PR Wire &middot; Sprout Social" data-tag="Integrated Campaign" data-title="360&deg; Brand Campaign" data-year="2026">
+      <div class="pfc-glow" style="--g:#a8863a">
+      </div>
+      <span class="pfc-tag">
+       Campaign
+      </span>
+      <span class="pfc-num">
+       06
+      </span>
+      <h3>
+       360&deg; Brand Campaign
+      </h3>
+      <p>
+       200% brand awareness lift and 60K new followers.
+      </p>
+      <button class="pfc-btn">
+       View Case Study &rarr;
+      </button>
+     </article>
+    </div>
+   </div>
+  </section>
+  <!-- ENHANCED PORTFOLIO MODAL -->
+  <div class="modal" id="modal">
+   <div class="modal-bg" id="modalBg">
+   </div>
+   <div class="modal-box modal-box-large">
+    <button class="modal-close" id="modalClose">
+     ✕
+    </button>
+    <div class="modal-header">
+     <div class="modal-meta">
+      <span class="tag" id="modalTag">
+       Case Study
+      </span>
+      <span class="modal-year" id="modalYear">
+      </span>
+     </div>
+     <h2 id="modalTitle">
+     </h2>
+     <div class="modal-client-row">
+      <span class="modal-client-lbl">
+       Client
+      </span>
+      <span class="modal-client-name" id="modalClient">
+      </span>
+     </div>
+    </div>
+    <p class="modal-desc-text" id="modalDesc">
+    </p>
+    <div class="modal-results-block">
+     <div class="modal-results-title">
+      Key Results
+     </div>
+     <div class="modal-results-chips" id="modalResults">
+     </div>
+    </div>
+    <div class="modal-stack-block">
+     <div class="modal-stack-title">
+      Tech & Tools
+     </div>
+     <div class="modal-chips" id="modalStack">
+     </div>
+    </div>
+    <a class="btn-primary modal-cta" href="#contact" onclick="closeModal()">
+     Start a Similar Project &rarr;
+    </a>
+   </div>
+  </div>
+  <!-- PROCESS -->
+  <section class="process" id="process">
+   <div class="wrap">
+    <div class="sec-head center" data-aos>
+     <span class="tag">
+      How We Work
+     </span>
+     <h2>
+      Our
+      <em>
+       4-Step
+      </em>
+      Process
+     </h2>
+     <p class="sec-sub">
+      A proven methodology that delivers world-class results every single time.
+     </p>
+    </div>
+    <div class="process-grid">
+     <div class="proc-card" data-aos data-delay="0">
+      <div class="proc-num">
+       01
+      </div>
+      <div class="proc-icon">
+       <svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" fill="rgba(201,168,76,0.08)" r="12" stroke="#e8c76a" stroke-width="2">
+        </circle>
+        <circle cx="20" cy="20" fill="none" r="7" stroke="#e8c76a" stroke-dasharray="3 2" stroke-width="1.5">
+        </circle>
+        <circle cx="20" cy="20" fill="#e8c76a" r="2.5">
+        </circle>
+        <line stroke="#e8c76a" stroke-linecap="round" stroke-width="2.5" x1="28.5" x2="37" y1="28.5" y2="37">
+        </line>
+        <rect fill="#e8c76a" height="6" rx="1.5" transform="rotate(45 37 37)" width="6" x="34" y="34">
+        </rect>
+       </svg>
+      </div>
+      <h3>
+       Discover
+      </h3>
+      <p>
+       Deep-dive into your brand, goals, audience, and competitive landscape to uncover real opportunities.
+      </p>
+     </div>
+     <div class="proc-card" data-aos data-delay="120">
+      <div class="proc-num">
+       02
+      </div>
+      <div class="proc-icon">
+       <svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="rgba(201,168,76,0.06)" height="28" rx="4" stroke="#e8c76a" stroke-width="2" width="32" x="6" y="8">
+        </rect>
+        <rect fill="rgba(201,168,76,0.15)" height="7" rx="4" stroke="none" width="32" x="6" y="8">
+        </rect>
+        <circle cx="11" cy="11.5" fill="#e8c76a" r="1.5">
+        </circle>
+        <circle cx="16" cy="11.5" fill="#e8c76a" opacity="0.6" r="1.5">
+        </circle>
+        <line stroke="#e8c76a" stroke-linecap="round" stroke-width="1.5" x1="12" x2="32" y1="22" y2="22">
+        </line>
+        <line opacity="0.6" stroke="#e8c76a" stroke-linecap="round" stroke-width="1.5" x1="12" x2="26" y1="27" y2="27">
+        </line>
+        <line opacity="0.35" stroke="#e8c76a" stroke-linecap="round" stroke-width="1.5" x1="12" x2="20" y1="32" y2="32">
+        </line>
+       </svg>
+      </div>
+      <h3>
+       Strategize
+      </h3>
+      <p>
+       Build a data-backed creative strategy and roadmap that aligns design decisions with business outcomes.
+      </p>
+     </div>
+     <div class="proc-card" data-aos data-delay="240">
+      <div class="proc-num">
+       03
+      </div>
+      <div class="proc-icon">
+       <svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 4 C22 4 30 8 34 17 L34 28 L24 40 L24 32 C18 32 12 26 12 20 L4 20 L14 10 L22 4Z" fill="rgba(201,168,76,0.1)" stroke="#e8c76a" stroke-linejoin="round" stroke-width="2">
+        </path>
+        <circle cx="26" cy="18" fill="rgba(201,168,76,0.25)" r="4" stroke="#e8c76a" stroke-width="1.8">
+        </circle>
+        <circle cx="26" cy="18" fill="#e8c76a" r="1.5">
+        </circle>
+       </svg>
+      </div>
+      <h3>
+       Create
+      </h3>
+      <p>
+       Our team executes with precision &mdash; crafting pixel-perfect designs and performant code that wow.
+      </p>
+     </div>
+     <div class="proc-card" data-aos data-delay="360">
+      <div class="proc-num">
+       04
+      </div>
+      <div class="proc-icon">
+       <svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="rgba(201,168,76,0.2)" height="9" rx="2" stroke="#e8c76a" stroke-width="1.8" width="7" x="5" y="30">
+        </rect>
+        <rect fill="rgba(201,168,76,0.25)" height="16" rx="2" stroke="#e8c76a" stroke-width="1.8" width="7" x="15" y="23">
+        </rect>
+        <rect fill="rgba(201,168,76,0.3)" height="23" rx="2" stroke="#e8c76a" stroke-width="1.8" width="7" x="25" y="16">
+        </rect>
+        <polyline fill="none" points="6,28 16,20 26,14 36,6" stroke="#e8c76a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </polyline>
+        <circle cx="36" cy="6" fill="#e8c76a" r="3">
+        </circle>
+       </svg>
+      </div>
+      <h3>
+       Grow
+      </h3>
+      <p>
+       Launch, measure, and continuously optimise to ensure your investment keeps delivering returns.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- STATS BANNER — enhanced with hover effects and extra detail -->
+  <section class="stats-banner" id="stats">
+   <div class="wrap">
+    <div class="sb-grid">
+     <div class="sb-item" data-aos data-sub="Across 40+ industries">
+      <span class="counter sb-num" data-t="240">
+       0
+      </span>
+      <sup>
+       +
+      </sup>
+      <p>
+       Projects Done
+      </p>
+      <span class="sb-sub">
+       Across 40+ industries
+      </span>
+     </div>
+     <div class="sb-item" data-aos data-delay="100" data-sub="5-star average rating">
+      <span class="counter sb-num" data-t="50">
+       0
+      </span>
+      <sup>
+       +
+      </sup>
+      <p>
+       Happy Clients
+      </p>
+      <span class="sb-sub">
+       5-star average rating
+      </span>
+     </div>
+     <div class="sb-item" data-aos data-delay="200" data-sub="Verified via post-project surveys">
+      <span class="counter sb-num" data-t="98">
+       0
+      </span>
+      <sup>
+       %
+      </sup>
+      <p>
+       Satisfaction Rate
+      </p>
+      <span class="sb-sub">
+       Post-project verified
+      </span>
+     </div>
+     <div class="sb-item" data-aos data-delay="300" data-sub="Industry & creative awards">
+      <span class="counter sb-num" data-t="18">
+       0
+      </span>
+      <sup>
+       +
+      </sup>
+      <p>
+       Awards Won
+      </p>
+      <span class="sb-sub">
+       Industry & creative
+      </span>
+     </div>
+     <div class="sb-item" data-aos data-delay="400" data-sub="Established 2017">
+      <span class="counter sb-num" data-t="9">
+       0
+      </span>
+      <sup>
+       yr
+      </sup>
+      <p>
+       In Business
+      </p>
+      <span class="sb-sub">
+       Established 2017
+      </span>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- TEAM -->
+  <section class="team" id="team">
+   <div class="wrap">
+    <div class="sec-head" data-aos>
+     <span class="tag">
+      The People
+     </span>
+     <h2>
+      Brilliant Minds
+      <br>
+      Behind the
+      <em>
+       Magic
+      </em>
+     </h2>
+    </div>
+    <div class="team-grid">
+     <div class="tm-card" data-aos data-delay="0">
+      <div class="tm-photo">
+       <span>
+        JD
+       </span>
+       <div class="tm-glow">
+       </div>
+      </div>
+      <h3>
+       Jane Doe
+      </h3>
+      <span class="tm-role">
+       Creative Director
+      </span>
+      <p>
+       10+ years shaping iconic brand identities for global companies and startups alike.
+      </p>
+      <div class="tm-socials">
+       <a href="#">
+        LinkedIn
+       </a>
+       <a href="#">
+        Twitter
+       </a>
+      </div>
+     </div>
+     <div class="tm-card" data-aos data-delay="120">
+      <div class="tm-photo">
+       <span>
+        JS
+       </span>
+       <div class="tm-glow">
+       </div>
+      </div>
+      <h3>
+       John Smith
+      </h3>
+      <span class="tm-role">
+       Lead Designer
+      </span>
+      <p>
+       Award-winning designer crafting pixel-perfect digital experiences worldwide for top brands.
+      </p>
+      <div class="tm-socials">
+       <a href="#">
+        LinkedIn
+       </a>
+       <a href="#">
+        Dribbble
+       </a>
+      </div>
+     </div>
+     <div class="tm-card" data-aos data-delay="240">
+      <div class="tm-photo">
+       <span>
+        EC
+       </span>
+       <div class="tm-glow">
+       </div>
+      </div>
+      <h3>
+       Emily Clark
+      </h3>
+      <span class="tm-role">
+       Strategy Director
+      </span>
+      <p>
+       Masterful strategist bridging creative vision and measurable business results consistently.
+      </p>
+      <div class="tm-socials">
+       <a href="#">
+        LinkedIn
+       </a>
+       <a href="#">
+        Twitter
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- PRICING — enhanced cards -->
+  <section class="pricing" id="pricing">
+   <div class="wrap">
+    <div class="sec-head center" data-aos>
+     <span class="tag">
+      Pricing
+     </span>
+     <h2>
+      Simple,
+      <em>
+       Transparent
+      </em>
+      Pricing
+     </h2>
+     <p class="sec-sub">
+      Choose the plan that fits your goals. No hidden fees, ever.
+     </p>
+    </div>
+    <div class="pricing-grid">
+     <div class="price-card" data-aos data-delay="0">
+      <div class="pc-top">
+       <div class="pc-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 2C12 2 17 5 17 11C17 13 16 15 16 15L8 15C8 15 7 13 7 11C7 5 12 2 12 2Z" fill="rgba(232,199,106,0.15)" stroke="#e8c76a" stroke-width="1.6" stroke-linejoin="round"/>
+         <circle cx="12" cy="9.5" r="1.8" fill="#e8c76a"/>
+         <path d="M8 14.5L6 18.5L9 17" stroke="#e8c76a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M16 14.5L18 18.5L15 17" stroke="#e8c76a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+       </div>
+       <h3>
+        Starter
+       </h3>
+       <p>
+        Perfect for small businesses getting started online.
+       </p>
+      </div>
+      <div class="pc-price">
+       <span>
+        $
+       </span>
+       1,500
+       <em>
+        /project
+       </em>
+      </div>
+      <div class="pc-timeline">
+       ⏱ Typical delivery: 2&ndash;3 weeks
+      </div>
+      <ul class="pc-features">
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Brand Identity Design
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        5-Page Website
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Mobile Responsive
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Basic SEO Setup
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        30-Day Support
+       </li>
+       <li class="dim">
+        <span class="pc-x">
+         &cross;
+        </span>
+        Custom Animations
+       </li>
+       <li class="dim">
+        <span class="pc-x">
+         &cross;
+        </span>
+        Marketing Campaign
+       </li>
+      </ul>
+      <a class="btn-ghost pc-btn" href="#contact" onclick="event.preventDefault();scrollToSection('contact')">
+       Get Started
+      </a>
+     </div>
+     <div class="price-card featured" data-aos data-delay="120">
+      <div class="pc-badge">
+       Most Popular
+      </div>
+      <div class="pc-top">
+       <div class="pc-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M13 2L4 14H11L10 22L20 9H13L13 2Z" fill="rgba(232,199,106,0.18)" stroke="#e8c76a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+       </div>
+       <h3>
+        Growth
+       </h3>
+       <p>
+        For growing brands ready to scale their digital presence.
+       </p>
+      </div>
+      <div class="pc-price">
+       <span>
+        $
+       </span>
+       5,000
+       <em>
+        /project
+       </em>
+      </div>
+      <div class="pc-timeline">
+       ⏱ Typical delivery: 4&ndash;6 weeks
+      </div>
+      <ul class="pc-features">
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Full Brand System
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        15-Page Website
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Custom Animations
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        SEO + Content Strategy
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Social Media Kit
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        90-Day Support
+       </li>
+       <li class="dim">
+        <span class="pc-x">
+         &cross;
+        </span>
+        Paid Campaigns
+       </li>
+      </ul>
+      <a class="btn-primary pc-btn" href="#contact" onclick="event.preventDefault();scrollToSection('contact')">
+       Get Started
+       <span class="ba">
+        &rarr;
+       </span>
+      </a>
+     </div>
+     <div class="price-card" data-aos data-delay="240">
+      <div class="pc-top">
+       <div class="pc-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M3 8L7 11L12 4L17 11L21 8L19.5 18H4.5L3 8Z" fill="rgba(232,199,106,0.15)" stroke="#e8c76a" stroke-width="1.6" stroke-linejoin="round"/>
+         <circle cx="3" cy="8" r="1.4" fill="#e8c76a"/>
+         <circle cx="12" cy="4" r="1.4" fill="#e8c76a"/>
+         <circle cx="21" cy="8" r="1.4" fill="#e8c76a"/>
+         <line x1="6" y1="20" x2="18" y2="20" stroke="#e8c76a" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+       </div>
+       <h3>
+        Enterprise
+       </h3>
+       <p>
+        Full-service partnership for ambitious companies.
+       </p>
+      </div>
+      <div class="pc-price">
+       <span>
+        $
+       </span>
+       15,000
+       <em>
+        +/project
+       </em>
+      </div>
+      <div class="pc-timeline">
+       ⏱ Typical delivery: 8&ndash;12 weeks
+      </div>
+      <ul class="pc-features">
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Complete Brand Overhaul
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Custom Web Application
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Motion Design & Video
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Full Marketing Campaigns
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Dedicated Account Manager
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        12-Month Support
+       </li>
+       <li>
+        <span class="pc-check">
+         &checkmark;
+        </span>
+        Monthly Analytics Reports
+       </li>
+      </ul>
+      <a class="btn-ghost pc-btn" href="#contact" onclick="event.preventDefault();scrollToSection('contact')">
+       Contact Us
+      </a>
+     </div>
+    </div>
+    <p class="pricing-note" data-aos>
+     💡 Not sure which plan?
+     <a href="#contact" onclick="event.preventDefault();scrollToSection('contact')">Book a free 30-min discovery call</a>
+     &mdash; we'll recommend the right fit for your goals.
+    </p>
+   </div>
+  </section>
+  <!-- TESTIMONIALS — with click-to-expand -->
+  <section class="testimonials" id="testimonials">
+   <div class="wrap">
+    <div class="sec-head center" data-aos>
+     <span class="tag">
+      Kind Words
+     </span>
+     <h2>
+      What Clients
+      <em>
+       Say
+      </em>
+     </h2>
+     <p class="sec-sub" style="margin:0 auto">
+      Click any review to read the full story.
+     </p>
+    </div>
+    <div class="tst-grid">
+     <div class="tst-card tst-clickable" data-aos data-author="Sarah Williams" data-delay="0" data-full="After working with 4 different agencies in 3 years, CG Agency was a completely different experience. They didn't just execute &mdash; they challenged our thinking, pushed creative boundaries, and delivered work that exceeded every benchmark we set. The attention to detail was extraordinary &mdash; every pixel, every word, every interaction felt intentional. Our brand has never looked more premium." data-role="CEO, Nexus Corp">
+      <div class="tst-stars">
+       &starf;&starf;&starf;&starf;&starf;
+      </div>
+      <p>
+       "CG Agency transformed our brand completely. Attention to detail was extraordinary &mdash; every pixel felt intentional."
+      </p>
+      <div class="tst-auth">
+       <div class="tst-av">
+        SW
+       </div>
+       <div>
+        <strong>
+         Sarah Williams
+        </strong>
+        <span>
+         CEO, Nexus Corp
+        </span>
+       </div>
+      </div>
+      <span class="tst-read-more">
+       Read full story &rarr;
+      </span>
+     </div>
+     <div class="tst-card tst-feat tst-clickable" data-aos data-author="Michael Brown" data-delay="120" data-full="We hired CG Agency for a complete website redesign and digital marketing overhaul. Within 6 weeks we had a stunning new site, and within 90 days our conversion rate had jumped 73%. They're not just executers &mdash; they're true strategic partners who understand what drives business outcomes. The ROI has been phenomenal. Best agency investment we've ever made, bar none." data-role="Founder, Velox Labs">
+      <span class="feat-badge">
+       Featured
+      </span>
+      <div class="tst-stars">
+       &starf;&starf;&starf;&starf;&starf;
+      </div>
+      <p>
+       "Our conversion rate jumped 73% after the redesign. Professional, fast, delivered beyond scope. Best agency we've worked with."
+      </p>
+      <div class="tst-auth">
+       <div class="tst-av">
+        MB
+       </div>
+       <div>
+        <strong>
+         Michael Brown
+        </strong>
+        <span>
+         Founder, Velox Labs
+        </span>
+       </div>
+      </div>
+      <span class="tst-read-more">
+       Read full story &rarr;
+      </span>
+     </div>
+     <div class="tst-card tst-clickable" data-aos data-author="Anna Lee" data-delay="240" data-full="CG Agency embedded themselves in our team like true partners. They learned our business, our customers, and our competitive landscape before writing a single line of code. The launch was flawless, and within the first quarter post-launch, our sales increased by 60%. They're the rare agency that cares about outcomes, not just deliverables." data-role="CMO, Bright Digital">
+      <div class="tst-stars">
+       &starf;&starf;&starf;&starf;&starf;
+      </div>
+      <p>
+       "Working with CG Agency felt like having a world-class team in-house. Sales increased 60% in the first quarter post-launch."
+      </p>
+      <div class="tst-auth">
+       <div class="tst-av">
+        AL
+       </div>
+       <div>
+        <strong>
+         Anna Lee
+        </strong>
+        <span>
+         CMO, Bright Digital
+        </span>
+       </div>
+      </div>
+      <span class="tst-read-more">
+       Read full story &rarr;
+      </span>
+     </div>
+     <div class="tst-card tst-clickable" data-aos data-author="Ravi Kumar" data-delay="0" data-full="We came to CG Agency with a clear goal: double our website traffic in 6 months. They not only achieved it &mdash; they exceeded it. Through a combination of technical SEO, content strategy, and a complete UI refresh, our traffic doubled in just 3 months. The brand also looks significantly more premium, which has directly impacted our ability to close enterprise deals." data-role="COO, TechStream">
+      <div class="tst-stars">
+       &starf;&starf;&starf;&starf;&starf;
+      </div>
+      <p>
+       "Incredible results. Our website traffic doubled in 3 months and the brand looks more premium than ever before."
+      </p>
+      <div class="tst-auth">
+       <div class="tst-av">
+        RK
+       </div>
+       <div>
+        <strong>
+         Ravi Kumar
+        </strong>
+        <span>
+         COO, TechStream
+        </span>
+       </div>
+      </div>
+      <span class="tst-read-more">
+       Read full story &rarr;
+      </span>
+     </div>
+     <div class="tst-card tst-clickable" data-aos data-author="Lisa Park" data-delay="120" data-full="I was skeptical about hiring a remote agency for our product launch, but CG Agency completely changed my perspective. From our first call, they understood exactly what we needed. They delivered the full brand, website, and launch campaign ahead of schedule, and the results spoke for themselves &mdash; we hit our 6-month user acquisition target in week 3 post-launch." data-role="Marketing Director, Zova">
+      <div class="tst-stars">
+       &starf;&starf;&starf;&starf;&starf;
+      </div>
+      <p>
+       "The team understood our vision instantly. Delivered ahead of schedule with stunning results that exceeded all expectations."
+      </p>
+      <div class="tst-auth">
+       <div class="tst-av">
+        LP
+       </div>
+       <div>
+        <strong>
+         Lisa Park
+        </strong>
+        <span>
+         Marketing Director, Zova
+        </span>
+       </div>
+      </div>
+      <span class="tst-read-more">
+       Read full story &rarr;
+      </span>
+     </div>
+     <div class="tst-card tst-clickable" data-aos data-author="Tom Mills" data-delay="240" data-full="We've been working with CG Agency on a monthly retainer for 18 months now and they've become our secret weapon. Every campaign they run exceeds our KPIs &mdash; usually by 30&ndash;50%. Their team combines deep creative talent with rigorous data thinking. They're also genuinely wonderful people to work with. I recommend them to every founder I speak to." data-role="CEO, GrowthHQ">
+      <div class="tst-stars">
+       &starf;&starf;&starf;&starf;&starf;
+      </div>
+      <p>
+       "CG Agency is our secret weapon. Every campaign they run exceeds our KPIs. Truly exceptional, consistent work."
+      </p>
+      <div class="tst-auth">
+       <div class="tst-av">
+        TM
+       </div>
+       <div>
+        <strong>
+         Tom Mills
+        </strong>
+        <span>
+         CEO, GrowthHQ
+        </span>
+       </div>
+      </div>
+      <span class="tst-read-more">
+       Read full story &rarr;
+      </span>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- TESTIMONIAL MODAL -->
+  <div class="tst-modal" id="tstModal">
+   <div class="tst-modal-bg" id="tstModalBg">
+   </div>
+   <div class="tst-modal-box">
+    <button class="modal-close" id="tstModalClose">
+     ✕
+    </button>
+    <div class="tst-stars">
+     &starf;&starf;&starf;&starf;&starf;
+    </div>
+    <p class="tst-modal-text" id="tstModalFull">
+    </p>
+    <div class="tst-auth tst-modal-auth">
+     <div class="tst-av" id="tstModalAv">
+     </div>
+     <div>
+      <strong id="tstModalAuthor">
+      </strong>
+      <span id="tstModalRole">
+      </span>
+     </div>
+    </div>
+    <a class="btn-primary" href="#contact" onclick="closeTstModal()" style="margin-top:24px;display:inline-flex">
+     Work With Us &rarr;
+    </a>
+   </div>
+  </div>
+
+
+<!-- BLOG ARTICLE MODAL -->
+  <div class="modal" id="blogModal">
+   <div class="modal-bg" id="blogModalBg">
+   </div>
+   <div class="modal-box modal-box-large">
+    <button class="modal-close" id="blogModalClose">
+     ✕
+    </button>
+    <div class="modal-header">
+     <div class="modal-meta">
+      <span class="tag" id="blogModalCat">
+       Article
+      </span>
+      <span class="modal-year" id="blogModalDate">
+      </span>
+     </div>
+     <h2 id="blogModalTitle">
+     </h2>
+    </div>
+    <p class="modal-desc-text" id="blogModalFull">
+    </p>
+    <a class="btn-primary modal-cta" href="#contact" onclick="closeBlogModal()">
+     Discuss This With Us &rarr;
+    </a>
+   </div>
+  </div>
+  
+
+  <!-- ABOUT — enhanced with more features -->
+  <section class="about" id="about">
+   <div class="wrap">
+    <div class="about-wrap">
+     <div class="ab-left" data-aos="fade-right">
+      <span class="tag">
+       Our Story
+      </span>
+      <h2>
+       Creativity Meets
+       <br>
+       <em>
+        Craft & Strategy
+       </em>
+      </h2>
+      <p>
+       Founded in 2017, CG Agency is a boutique creative studio working with ambitious brands to create digital experiences that stand out. We believe in doing fewer things, exceptionally better.
+      </p>
+      <ul class="ab-list">
+       <li>
+        <div class="ab-icon">
+         ◈
+        </div>
+        <div>
+         <strong>
+          Innovation First
+         </strong>
+         <span>
+          We push creative and technical limits &mdash; never settling for "good enough" when "extraordinary" is achievable.
+         </span>
+        </div>
+       </li>
+       <li>
+        <div class="ab-icon">
+         ◉
+        </div>
+        <div>
+         <strong>
+          True Collaboration
+         </strong>
+         <span>
+          We embed in your team as true partners &mdash; aligned with your vision, culture, and business goals from day one.
+         </span>
+        </div>
+       </li>
+       <li>
+        <div class="ab-icon">
+         ◎
+        </div>
+        <div>
+         <strong>
+          Obsessive Quality
+         </strong>
+         <span>
+          Every pixel, word, animation, and line of code is considered with intention. We don't ship anything we're not proud of.
+         </span>
+        </div>
+       </li>
+       <li>
+        <div class="ab-icon">
+         ◫
+        </div>
+        <div>
+         <strong>
+          Results-Driven
+         </strong>
+         <span>
+          Beautiful work that doesn't perform isn't good enough. We tie every creative decision to measurable business outcomes.
+         </span>
+        </div>
+       </li>
+      </ul>
+      <a class="btn-primary" href="#contact" onclick="event.preventDefault();scrollToSection('contact')">
+       Work With Us
+       <span class="ba">
+        &rarr;
+       </span>
+      </a>
+     </div>
+     <div class="ab-right" data-aos="fade-left">
+      <div class="ab-grid">
+       <div class="abg-card abg-main">
+        <span class="counter abg-big" data-t="240">
+         0
+        </span>
+        <sup>
+         +
+        </sup>
+        <p>
+         Projects Delivered
+        </p>
+        <div class="abg-sub">
+         Across 40+ countries
+        </div>
+       </div>
+       <div class="abg-card">
+        <span class="counter abg-num" data-t="50">
+         0
+        </span>
+        <sup>
+         +
+        </sup>
+        <p>
+         Happy Clients
+        </p>
+        <div class="abg-sub">
+         5&starf; avg. rating
+        </div>
+       </div>
+       <div class="abg-card">
+        <span class="counter abg-num" data-t="9">
+         0
+        </span>
+        <sup>
+         yr
+        </sup>
+        <p>
+         In Business
+        </p>
+        <div class="abg-sub">
+         Est. 2017
+        </div>
+       </div>
+  <div class="abg-card abg-award">
+        <div class="aw-icon">
+         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 4H17V10C17 12.7614 14.7614 15 12 15C9.23858 15 7 12.7614 7 10V4Z" fill="rgba(224,123,90,0.15)" stroke="#e07b5a" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M7 5H4.5C4.5 5 4 8.5 7 9.5" stroke="#e07b5a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 5H19.5C19.5 5 20 8.5 17 9.5" stroke="#e07b5a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 15V19" stroke="#e07b5a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M8.5 21H15.5" stroke="#e07b5a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M9.5 21C9.5 19.5 10.5 19 12 19C13.5 19 14.5 19.5 14.5 21" stroke="#e07b5a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="9" r="2" fill="#e07b5a"/>
+         </svg>
+        </div>
+        <p>
+         Award Winning
+        </p>
+        <div class="abg-sub">
+         18+ industry awards
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- FAQ — enhanced with bigger text and more content -->
+  <section class="faq" id="faq">
+   <div class="wrap">
+    <div class="sec-head center" data-aos>
+     <span class="tag">
+      FAQ
+     </span>
+     <h2>
+      Frequently Asked
+      <em>
+       Questions
+      </em>
+     </h2>
+     <p class="sec-sub">
+      Everything you need to know before working with us.
+     </p>
+    </div>
+    <div class="faq-list" data-aos>
+     <div class="faq-item">
+      <button class="faq-q">
+       How long does a typical project take?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Timelines vary by project scope. Branding projects typically take
+        <strong>
+         2&ndash;4 weeks
+        </strong>
+        . Website design and development ranges from
+        <strong>
+         4&ndash;8 weeks
+        </strong>
+        . Full digital marketing campaigns are usually
+        <strong>
+         6&ndash;12 weeks
+        </strong>
+        from kick-off to launch. Larger enterprise projects or complex web applications can take
+        <strong>
+         3&ndash;6 months
+        </strong>
+        . We always provide a detailed project timeline before we begin, with clear milestones and delivery dates so you always know exactly where things stand.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       Do you work with international clients?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Absolutely. We work with clients from
+        <strong>
+         over 40 countries
+        </strong>
+        across Asia, Europe, North America, the Middle East, and beyond. Our team is fully remote-first and deeply experienced in async collaboration across time zones. We use modern tools like Notion, Figma, Slack, and Loom to ensure seamless communication regardless of geography. Our core team is based in
+        <strong>
+         Bangladesh
+        </strong>
+        , with partners in multiple cities globally.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       What is your payment structure?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        For most projects, we work on a
+        <strong>
+         50% deposit upfront, 50% on final delivery
+        </strong>
+        model. For larger enterprise projects (typically $15,000+), we offer
+        <strong>
+         milestone-based payments
+        </strong>
+        tied to key deliverables &mdash; so you're always paying for work completed. We accept bank transfer, PayPal, Wise, and major credit cards. All pricing is in USD and quoted with no hidden fees. Retainer agreements are billed monthly in advance.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       Will I own the final designs and code?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Yes &mdash;
+        <strong>
+         100%
+        </strong>
+        . Upon final payment, all intellectual property transfers to you completely. You receive every source file: Figma files, Adobe CC source files, all code repositories, brand asset packs, and documentation. We don't retain any rights to your project. You can take your assets to any other agency or in-house team and continue building on them freely.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       Do you offer ongoing support after launch?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Yes. All projects include a
+        <strong>
+         post-launch support period
+        </strong>
+        &mdash; 30 days for Starter, 90 days for Growth, and 12 months for Enterprise. During this period we fix any bugs, address feedback, and ensure everything is performing perfectly. After the support period, we offer flexible
+        <strong>
+         monthly retainer packages
+        </strong>
+        for ongoing maintenance, updates, and growth campaigns. Many of our clients have been on retainer for 2+ years.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       How do I get started?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Getting started is simple. Fill out the
+        <a href="#contact" style="color:var(--v3)">
+         contact form below
+        </a>
+        or email us directly at
+        <strong>
+         mdsaidulislamratin967@gmail.com
+        </strong>
+        . Tell us a bit about your project &mdash; what you need, your timeline, and your budget range. We'll respond within
+        <strong>
+         4 business hours
+        </strong>
+        to schedule a free 30-minute discovery call. On that call, we'll learn about your goals and recommend the right approach. No pressure, no sales pitch &mdash; just a genuine conversation.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       What makes CG Agency different from other agencies?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Most agencies are either good at design
+        <em>
+         or
+        </em>
+        good at strategy
+        <em>
+         or
+        </em>
+        good at development. We're built to be exceptional at all three, operating as a fully integrated studio. We're also a
+        <strong>
+         boutique studio
+        </strong>
+        &mdash; we take on a limited number of projects at a time so every client gets senior-level attention. We don't outsource. Every deliverable is created in-house by our core team. And we're obsessively focused on
+        <strong>
+         business outcomes
+        </strong>
+        , not just beautiful deliverables.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <button class="faq-q">
+       Can you handle rush projects or tight deadlines?
+       <span class="fq-icon">
+        +
+       </span>
+      </button>
+      <div class="faq-a">
+       <p>
+        Yes &mdash; we understand that business moves fast and sometimes you need things done quickly. We offer a
+        <strong>
+         rush delivery option
+        </strong>
+        for projects that need to move faster than our standard timelines. Rush projects are subject to availability and a
+        <strong>
+         25% fast-track fee
+        </strong>
+        . Reach out and tell us your deadline &mdash; we'll be honest about whether we can make it happen and what it would take.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- CONTACT — updated phone and location -->
+  <section class="contact" id="contact">
+   <div class="wrap">
+    <div class="ct-wrap">
+     <div class="ct-left" data-aos="fade-right">
+      <span class="tag">
+       Say Hello
+      </span>
+      <h2>
+       Let's Build
+       <br>
+       Something
+       <em>
+        Great
+       </em>
+      </h2>
+      <p>
+       Have a project in mind? We'd love to hear about it. We typically respond within 4 business hours.
+      </p>
+      <div class="ct-info">
+       <div class="ci">
+        <span class="ci-lbl">
+         Email
+        </span>
+        <span>
+         mdsaidulislamratin967@gmail.com
+        </span>
+       </div>
+       <div class="ci">
+        <span class="ci-lbl">
+         Phone
+        </span>
+        <span>
+         +880 1407-948498
+        </span>
+       </div>
+       <div class="ci">
+        <span class="ci-lbl">
+         Based
+        </span>
+        <span>
+         Bangladesh & Remote
+        </span>
+       </div>
+       <div class="ci">
+        <span class="ci-lbl">
+         Hours
+        </span>
+        <span>
+         Mon&ndash;Fri, 9AM&ndash;6PM BST
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="ct-right" data-aos="fade-left">
+      <form id="contactForm" novalidate>
+       <div class="cf-row">
+        <div class="cf-field">
+         <label>
+          Name
+         </label>
+         <input id="cfName" placeholder="Your full name" required type="text">
+        </div>
+        <div class="cf-field">
+         <label>
+          Email
+         </label>
+         <input id="cfEmail" placeholder="your@email.com" required type="email">
+        </div>
+       </div>
+       <div class="cf-field">
+        <label>
+         Project Type
+        </label>
+        <input id="cfSubject" placeholder="e.g. Brand identity + website" type="text">
+       </div>
+       <div class="cf-field">
+        <label>
+         Budget Range
+        </label>
+        <select id="cfBudget">
+         <option value>
+          Select budget range
+         </option>
+         <option>
+          Under $1,000
+         </option>
+         <option>
+          $1,000 &ndash; $5,000
+         </option>
+         <option>
+          $5,000 &ndash; $15,000
+         </option>
+         <option>
+          $15,000 &ndash; $50,000
+         </option>
+         <option>
+          $50,000+
+         </option>
+        </select>
+       </div>
+       <div class="cf-field">
+        <label>
+         Message
+        </label>
+        <textarea id="cfMsg" placeholder="Tell us about your project, goals, and timeline..." required rows="5"></textarea>
+       </div>
+       <button class="btn-primary cf-btn" type="submit">
+        <span>
+         Send Message
+        </span>
+        <div class="ba">
+         &rarr;
+        </div>
+       </button>
+       <div class="cf-res" id="cfRes">
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- BLOG -->
+  <section class="blog" id="blog">
+   <div class="wrap">
+    <div class="bl-top" data-aos>
+     <div>
+      <span class="tag">
+       Insights
+      </span>
+      <h2>
+       From Our
+       <em>
+        Blog
+       </em>
+      </h2>
+     </div>
+     <a class="btn-ghost" href="#">
+      All Articles &rarr;
+     </a>
+    </div>
+    <div class="bl-grid">
+
+<article class="bl-card" data-aos data-delay="0" data-full="2026 has brought a clear shift toward interfaces that feel calm, tactile, and intentional. Bold gradients and heavy glassmorphism are giving way to quieter palettes, generous whitespace, and typography that carries more of the visual weight. We're also seeing a rise in micro-interactions — small, purposeful animations that guide attention rather than distract from it. Dark-mode-first design has matured too, with teams now designing dual themes from day one rather than retrofitting a dark palette later. On the interaction side, AI-assisted personalization is reshaping how interfaces adapt to individual users in real time — layouts, content, and even color accents shifting subtly based on behavior. For brands, the takeaway is simple: restraint is the new differentiator. The sites that stand out in 2026 aren't the loudest — they're the ones that make every pixel earn its place.">
+      <div class="blc-top">
+       <span class="blc-cat">
+        Design
+       </span>
+       <span class="blc-date">
+        May 2026
+       </span>
+      </div>
+      <h3>
+       Design Trends Defining 2026
+      </h3>
+      <p>
+       Exploring the UI/UX and visual design movements shaping the digital landscape this year and beyond.
+      </p>
+      <a class="blc-link" href="#blog" onclick="event.preventDefault()">Read Article →</a>
+     </article>
+
+     <article class="bl-card bl-feat" data-aos data-delay="120" data-full="Artificial intelligence has moved from a marketing buzzword to a genuine operational advantage — but only for brands using it with intention. The agencies and companies pulling ahead in 2026 aren't the ones running the most automated campaigns; they're the ones using AI to free up time for deeper strategic thinking. Predictive analytics now let teams anticipate customer needs before a search is even typed, while AI-assisted content workflows compress weeks of production into days without sacrificing brand voice. The real shift, though, is in personalization at scale — audiences no longer see generic funnels, they see journeys shaped by their own behavior. That said, the brands winning trust are the ones that keep a human hand on strategy, tone, and ethics, using AI as a force-multiplier rather than a replacement for judgment. The future of digital marketing isn't fully automated — it's intelligently augmented, with creativity still firmly in the driver's seat.">
+      <div class="blc-top">
+       <span class="blc-cat blc-pick">
+        Editor's Pick
+       </span>
+       <span class="blc-date">
+        Apr 2026
+       </span>
+      </div>
+      <h3>
+       The Future of Digital Marketing in the Age of AI
+      </h3>
+      <p>
+       How smart brands leverage AI-driven strategies to outperform competitors and build lasting relationships.
+      </p>
+      <a class="blc-link" href="#blog" onclick="event.preventDefault()">Read Article →</a>
+     </article>
+
+     <article class="bl-card" data-aos data-delay="240" data-full="Performance is still one of the most underrated growth levers in web development. Every 100ms of added load time measurably chips away at conversion rate, yet most teams still chase performance only after users start complaining. The fundamentals remain the biggest wins: compressing and lazy-loading images, minimizing render-blocking JavaScript, and shipping only the CSS a page actually needs. Beyond that, modern hosting and edge caching can shave critical seconds off Time to First Byte, especially for global audiences. Accessibility and performance are also more connected than most teams realize — semantic HTML and proper contrast ratios often correlate directly with faster, leaner pages because they force simpler markup. Core Web Vitals remain the clearest signal for both search ranking and real user experience, so treating them as an ongoing discipline — not a one-time audit — is what separates sites that merely load from sites that convert. In 2026, speed isn't a technical detail. It's a first impression.">
+      <div class="blc-top">
+       <span class="blc-cat">
+        Development
+       </span>
+       <span class="blc-date">
+        Mar 2026
+       </span>
+      </div>
+      <h3>
+       Web Performance Tips That Actually Matter
+      </h3>
+      <p>
+       Proven techniques for building faster, more accessible, and higher-converting websites in 2026.
+      </p>
+      <a class="blc-link" href="#blog" onclick="event.preventDefault()">Read Article →</a>
+     </article>
+
+    </div>
+   </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+   <div class="wrap">
+    <div class="ft-top">
+     <div class="ft-brand">
+      <a class="logo ft-logo" href="#home">
+       CG
+       <span>
+        Agency
+       </span>
+      </a>
+      <p>
+       Where bold ideas become extraordinary digital experiences that move people and grow businesses.
+      </p>
+      <div class="ft-socials">
+       <a aria-label="Twitter" href="#">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22L14.4 10.7L23.3 22H16.4L11 15.1L4.8 22H1.7L9.9 12.7L1.3 2H8.4L13.3 8.3L18.9 2ZM17.6 20H19.5L7.1 4H5L17.6 20Z"/></svg>
+       </a>
+       <a aria-label="LinkedIn" href="#">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zM8.5 8h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+       </a>
+       <a aria-label="Instagram" href="#">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85C2.38 3.9 3.9 2.37 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.72 2.7 21.3.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+       </a>
+       <a aria-label="Dribbble" href="#">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm7.6 5.6c1.3 1.6 2.1 3.6 2.2 5.8-.3-.1-3.5-.7-6.8-.3-.1-.2-.1-.4-.2-.6-.2-.5-.4-.9-.6-1.4 3.5-1.4 5.1-3.5 5.4-3.5zM12 1.9c2.6 0 5 .9 6.8 2.5-.2.3-1.7 2.2-5.1 3.5C12.2 5.1 10.7 2.7 10 1.6c.7-.1 1.3-.1 2-.1zm-3.5.6c.7 1.1 2.2 3.6 3.7 6.6-4.7 1.2-8.8 1.2-9.2 1.2C3.5 6.9 5.5 4.2 8.5 2.5zM1.9 12v-.3c.4 0 5.2.1 10.2-1.4.3.5.5 1 .8 1.5-.1 0-.3.1-.4.1-5.2 1.7-8 6.3-8.2 6.6C2.7 16.3 1.9 14.2 1.9 12zm4.3 8.1c.2-.4 2.2-4.4 7.7-6.4h.1c1.4 3.9 2 7.1 2.2 8-3.2 1.6-6.9 1.4-10-.2zm11.7-.9c-.1-.6-.7-3.6-2-7.4 3.1-.5 5.8.3 6.1.4-.4 2.9-2 5.4-4.1 7z"/></svg>
+       </a>
+      </div>
+     </div>
+     <div class="ft-nav">
+      <div class="ftn">
+       <h4>
+        Company
+       </h4>
+       <a href="#about">
+        About
+       </a>
+       <a href="#team">
+        Team
+       </a>
+       <a href="#blog">
+        Blog
+       </a>
+       <a href="#">
+        Careers
+       </a>
+      </div>
+      <div class="ftn">
+       <h4>
+        Services
+       </h4>
+       <a href="#services">
+        Branding
+       </a>
+       <a href="#services">
+        UI/UX
+       </a>
+       <a href="#services">
+        Development
+       </a>
+       <a href="#services">
+        Marketing
+       </a>
+      </div>
+      <div class="ftn">
+       <h4>
+        Client
+       </h4>
+       <a href="login.html">
+        Login
+       </a>
+       <a href="login.html#register">
+        Register
+       </a>
+       <a href="dashboard.html">
+        Dashboard
+       </a>
+       <a href="#">
+        Support
+       </a>
+      </div>
+      <div class="ftn">
+       <h4>
+        Legal
+       </h4>
+       <a href="#">
+        Privacy
+       </a>
+       <a href="#">
+        Terms
+       </a>
+       <a href="#">
+        Cookies
+       </a>
+       <a href="#">
+        Sitemap
+       </a>
+      </div>
+     </div>
+    </div>
+
+   <div class="ft-bottom">
+     <p class="ft-copy">
+      &copy; 2026 CG Agency. All rights reserved.
+     </p>
+     <div class="ft-crafted">
+      <span class="ft-crafted-dot">
+      </span>
+      Crafted with passion
+      <span class="ft-crafted-sep">
+       &middot;
+      </span>
+      Bangladesh & Remote
+     </div>
+    </div>
+   </div>
+  </footer>
+  
+  <!-- BACK TO TOP BUTTON -->
+  <button aria-label="Back to top" class="back-top" id="backTop" style="cursor:pointer!important">
+   &uarr;
+  </button>
+  <!-- CHATBOT -->
+  <div class="chatbot" id="chatbot">
+   <div class="cb-window" id="cbWindow">
+    <div class="cb-header">
+     <div class="cb-info">
+      <div class="cb-av">
+       CG
+      </div>
+      <div>
+       <strong>
+        CG Support
+       </strong>
+       <span class="cb-online">
+        ● Online &mdash; replies instantly
+       </span>
+      </div>
+     </div>
+     <button class="cb-close" id="cbClose">
+      ✕
+     </button>
+    </div>
+    <div class="cb-messages" id="cbMessages">
+     <div class="cb-msg bot">
+      <div class="cb-bubble">
+       👋 Hi! I'm the CG Agency assistant. How can I help you today?
+      </div>
+      <div class="cb-time">
+       Just now
+      </div>
+     </div>
+     <div class="cb-quick-replies">
+      <button class="cb-qr" data-msg="Tell me about your services">
+       Services
+      </button>
+      <button class="cb-qr" data-msg="How much does a website cost?">
+       Pricing
+      </button>
+      <button class="cb-qr" data-msg="I want to start a project">
+       Start Project
+      </button>
+     </div>
+    </div>
+    <div class="cb-input-wrap">
+     <input autocomplete="off" id="cbInput" placeholder="Type a message..." type="text">
+     <button id="cbSend">
+      &rarr;
+     </button>
+    </div>
+   </div>
+   <button class="cb-toggle" id="cbToggle">
+    <span class="cb-icon-open">
+     💬
+    </span>
+    <span class="cb-icon-close">
+     ✕
+    </span>
+    <span class="cb-badge" id="cbBadge">
+     1
+    </span>
+   </button>
+  </div>
+  <script defer src="index.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+   Login &mdash; CG Agency
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+  <link href="login.css" rel="stylesheet">
+ </head>
+ <body>
+  <div class="auth-bg">
+   <div class="auth-orb o1">
+   </div>
+   <div class="auth-orb o2">
+   </div>
+   <div class="auth-orb o3">
+   </div>
+  </div>
+  <div class="auth-page">
+   <div class="auth-left">
+    <a class="logo" href="index.html">
+     CG
+     <span>
+      Agency
+     </span>
+    </a>
+    <div class="al-content">
+     <h2>
+      Your creative
+      <br>
+      <em>
+       journey starts here.
+      </em>
+     </h2>
+     <ul class="al-features">
+      <li>
+       <span class="al-check">
+        &checkmark;
+       </span>
+       Access your dedicated client dashboard
+      </li>
+      <li>
+       <span class="al-check">
+        &checkmark;
+       </span>
+       Track project progress in real-time
+      </li>
+      <li>
+       <span class="al-check">
+        &checkmark;
+       </span>
+       Share files & communicate securely
+      </li>
+      <li>
+       <span class="al-check">
+        &checkmark;
+       </span>
+       View invoices and project analytics
+      </li>
+     </ul>
+     <div class="al-testimonial">
+      <p>
+       "CG Agency's client portal made collaboration seamless. 10/10 experience."
+      </p>
+      <div class="alt-auth">
+       <div class="alt-av">
+        MB
+       </div>
+       <div>
+        <strong>
+         Michael Brown
+        </strong>
+        <span>
+         Founder, Velox Labs
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="auth-right">
+    <div class="auth-tabs">
+     <button class="at-btn active" id="tabLogin">
+      Login
+     </button>
+     <button class="at-btn" id="tabRegister">
+      Register
+     </button>
+    </div>
+    <!-- LOGIN -->
+    <div class="auth-form" id="formLogin">
+     <div class="af-head">
+      <h3>
+       Welcome back
+      </h3>
+      <p>
+       Enter your credentials to access your dashboard
+      </p>
+     </div>
+     <div class="af-social">
+      <button class="soc-btn" onclick="socialLogin('Google')">
+       <span>
+        G
+       </span>
+       Continue with Google
+      </button>
+      <button class="soc-btn" onclick="socialLogin('LinkedIn')">
+       <span>
+        in
+       </span>
+       Continue with LinkedIn
+      </button>
+     </div>
+     <div class="af-divider">
+      <span>
+       or continue with email
+      </span>
+     </div>
+     <div class="af-field">
+      <label>
+       Email Address
+      </label>
+      <input autocomplete="email" id="lEmail" placeholder="your@email.com" required type="email">
+     </div>
+     <div class="af-field">
+      <label>
+       Password
+      </label>
+      <div class="pw-wrap">
+       <input id="lPassword" placeholder="Enter your password" required type="password">
+       <button class="pw-toggle" id="pwToggle" type="button">
+        👁
+       </button>
+      </div>
+     </div>
+     <div class="af-row">
+      <label class="af-check">
+       <input id="remember" type="checkbox">
+       Remember me
+      </label>
+      <a class="af-forgot" href="#" onclick="forgotPw(event)">
+       Forgot password?
+      </a>
+     </div>
+     <button class="btn-auth" id="loginBtn">
+      Sign In &rarr;
+     </button>
+     <div class="auth-msg" id="loginMsg">
+     </div>
+     <div class="af-demo">
+      <p>
+       Demo:
+       <strong>
+        mdsaidulislamratin967@gmail.com
+       </strong>
+       /
+       <strong>
+        demo123
+       </strong>
+      </p>
+     </div>
+    </div>
+    <!-- REGISTER -->
+    <div class="auth-form hidden" id="formRegister">
+     <div class="af-head">
+      <h3>
+       Create your account
+      </h3>
+      <p>
+       Join CG Agency and start your project journey
+      </p>
+     </div>
+     <div class="af-social">
+      <button class="soc-btn" onclick="socialLogin('Google')">
+       <span>
+        G
+       </span>
+       Sign up with Google
+      </button>
+     </div>
+     <div class="af-divider">
+      <span>
+       or register with email
+      </span>
+     </div>
+     <div class="af-row2">
+      <div class="af-field">
+       <label>
+        First Name
+       </label>
+       <input id="rFirst" placeholder="John" required type="text">
+      </div>
+      <div class="af-field">
+       <label>
+        Last Name
+       </label>
+       <input id="rLast" placeholder="Doe" required type="text">
+      </div>
+     </div>
+     <div class="af-field">
+      <label>
+       Email Address
+      </label>
+      <input id="rEmail" placeholder="your@email.com" required type="email">
+     </div>
+     <div class="af-field">
+      <label>
+       Company (Optional)
+      </label>
+      <input id="rCompany" placeholder="Your company name" type="text">
+     </div>
+     <div class="af-field">
+      <label>
+       Password
+      </label>
+      <div class="pw-wrap">
+       <input id="rPassword" placeholder="Min. 8 characters" required type="password">
+       <button class="pw-toggle" id="pwToggle2" type="button">
+        👁
+       </button>
+      </div>
+      <div class="pw-strength" id="pwStrength">
+       <div class="pws-bar" id="pwsBar">
+       </div>
+       <span id="pwsLabel">
+       </span>
+      </div>
+     </div>
+     <div class="af-field">
+      <label>
+       How did you hear about us?
+      </label>
+      <select id="rSource">
+       <option value>
+        Select an option
+       </option>
+       <option>
+        Google Search
+       </option>
+       <option>
+        Social Media
+       </option>
+       <option>
+        Referral
+       </option>
+       <option>
+        Other
+       </option>
+      </select>
+     </div>
+     <label class="af-check mt">
+      <input id="rTerms" required type="checkbox">
+      I agree to the
+      <a href="#">
+       Terms
+      </a>
+      and
+      <a href="#">
+       Privacy Policy
+      </a>
+     </label>
+     <button class="btn-auth" id="registerBtn">
+      Create Account &rarr;
+     </button>
+     <div class="auth-msg" id="registerMsg">
+     </div>
+    </div>
+    <p class="auth-back">
+     <a href="index.html">
+      &larr; Back to CG Agency
+     </a>
+    </p>
+   </div>
+  </div>
+  <script defer src="login.js">
+  </script>
+ </body>
+</html>
