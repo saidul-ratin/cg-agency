@@ -4539,3 +4539,156 @@ a, button, .pf-card, .pfc-btn, .svc-row, .tst-card,
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
+
+
+
+/* ================================================================
+   CG Agency — MOBILE / BUTTON FIXES
+   Paste this whole block at the very END of index.css
+   (it must stay last so it overrides the older rules above)
+   ================================================================ */
+
+/* 1. No sideways scrolling on phones */
+html { overflow-x: hidden; }
+body { max-width: 100%; }
+.hero-inner > * { min-width: 0; }
+
+@media (max-width: 1024px) {
+  /* fade-left / fade-right start 28px off to the side and made the page wider than the screen */
+  [data-aos="fade-right"],
+  [data-aos="fade-left"] { transform: translateY(28px); }
+  [data-aos="fade-right"].vis,
+  [data-aos="fade-left"].vis { transform: translateY(0); }
+}
+
+/* 2. Navbar: the blur moved to ::before.
+      backdrop-filter on .navbar trapped the fixed mobile menu inside the navbar box. */
+.navbar,
+.navbar.scrolled {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: rgba(15, 15, 15, 0);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  transition: background .4s var(--ease), backdrop-filter .4s var(--ease), -webkit-backdrop-filter .4s var(--ease);
+}
+.navbar.scrolled::before {
+  background: rgba(15, 15, 15, .94);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+/* 3. Mobile menu */
+.mobile-panel {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.burger {
+  min-width: 40px;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.burger.active span:nth-child(1) { transform: translateY(3.25px) rotate(45deg); }
+.burger.active span:nth-child(2) { transform: translateY(-3.25px) rotate(-45deg); }
+/* chatbot + back-to-top were floating on top of the open menu */
+body.menu-open .chatbot,
+body.menu-open .back-top { display: none; }
+
+/* 4. Services — tap to open (the JS adds .svc-open, there was no CSS for it) */
+@media (hover: none) {
+  /* touch screens keep :hover "stuck" after a tap, which stopped the panel from closing */
+  .svc-row:hover::before { opacity: 0; }
+  .svc-row:hover::after { width: 0; }
+  .svc-row:hover .sr-left h3 { color: var(--white); }
+  .svc-row:hover .sr-arr { color: var(--dim); transform: none; }
+  .svc-row:hover .svc-detail-panel {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    border-top-width: 0;
+  }
+}
+.svc-row.svc-open::before { opacity: 1; }
+.svc-row.svc-open::after { width: 100%; }
+.svc-row.svc-open .sr-left h3 { color: var(--v3); }
+.svc-row.svc-open .sr-arr { color: var(--v3); transform: translate(4px, -4px); }
+.svc-row.svc-open .svc-detail-panel {
+  max-height: 220px;
+  opacity: 1;
+  padding: 22px 0 8px 0;
+  border-top: 1px solid var(--vborder);
+}
+@media (max-width: 1024px) {
+  /* the panel stacks into one column on phones and needs more height than 220px */
+  .svc-row.svc-open .svc-detail-panel { max-height: 700px; }
+}
+@media (max-width: 1024px) and (hover: hover) {
+  .svc-row:hover .svc-detail-panel { max-height: 700px; }
+}
+
+/* 5. Portfolio filter — hidden cards no longer leave empty gaps */
+.pf-card.gone { display: none; }
+.pf-grid.filtered .pf-tall { grid-row: auto; }
+.pf-grid.filtered .pf-wide { grid-column: auto; }
+.pf-btn { flex-shrink: 0; white-space: nowrap; }
+
+/* 6. Modals — long content can scroll instead of being cut off */
+.modal-box,
+.tst-modal-box {
+  max-height: calc(100vh - 40px);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* 7. FAQ — long answers were cut at 400px on narrow screens */
+.faq-item.open .faq-a { max-height: 1200px; }
+
+/* 8. Testimonials — "Read full story" only showed on hover, so phones never saw it */
+@media (hover: none) {
+  .tst-read-more { opacity: 1; transform: none; }
+}
+
+/* 9. Chatbot fits short screens */
+.cb-window {
+  max-height: calc(100vh - 110px);
+  max-height: calc(100dvh - 110px);
+}
+.cb-messages {
+  min-height: 0;
+  max-height: min(320px, calc(100dvh - 300px));
+}
+.cb-close { padding: 8px 10px; }
+
+/* 10. Phones: stop iOS from zooming into inputs, tidy small things */
+@media (max-width: 1024px) {
+  input,
+  select,
+  textarea,
+  #cbInput,
+  #contactForm input,
+  #contactForm textarea,
+  #contactForm select { font-size: 16px !important; }
+}
+@media (max-width: 768px) {
+  .scroll-hint { display: none; }          /* overlapped the hero stats */
+  .back-top { bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+  .chatbot { bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 480px) {
+  .ft-crafted { flex-wrap: wrap; justify-content: center; text-align: center; }
+}
+
+/* 11. Long e-mail address no longer pushes the contact block wider than the screen */
+.ci span:last-child { min-width: 0; overflow-wrap: anywhere; }

@@ -1,7 +1,57 @@
-/* CG Agency — dashboard.js
-   Dashboard: Section Switching, Sidebar, Greeting, Counters,
-   Progress Bars, Charts, Messages, Notifications, Search,
-   Project Modal, Settings, Invoices */
+/* CG Agency — dashboard.js  (FIXED)
+   - real sidebar overlay (tap outside closes it), Esc closes it
+   - notification panel moved out of the <button>, items are clickable
+   - overview "+ New Project" now opens the modal
+   - invoice Download / View and file download buttons work,
+     including buttons on newly uploaded files (event delegation)
+   - reply goes to the contact you sent it to, even if you switch chats */
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+/* TOAST */
+function showToast(msg) {
+  let t = document.getElementById('dashToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'dashToast';
+    t.className = 'dash-toast';
+    t.setAttribute('role', 'status');
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+/* SIDEBAR */
+const sidebar = document.getElementById('sidebar');
+const sbToggle = document.getElementById('sbToggle');
+
+const sbOverlay = document.createElement('div');
+sbOverlay.className = 'sb-overlay';
+document.body.appendChild(sbOverlay);
+
+function setSidebar(open) {
+  if (sidebar) sidebar.classList.toggle('open', open);
+  document.body.classList.toggle('sb-open', open);
+}
+sbOverlay.addEventListener('click', () => setSidebar(false));
+
+if (sbToggle && sidebar) {
+  sbToggle.addEventListener('click', e => {
+    e.stopPropagation();
+    setSidebar(!sidebar.classList.contains('open'));
+  });
+  document.addEventListener('click', e => {
+    if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && !sbToggle.contains(e.target)) {
+      setSidebar(false);
+    }
+  });
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) setSidebar(false); });
+}
 
 /* SECTION SWITCHING */
 function switchSection(id) {
@@ -11,7 +61,8 @@ function switchSection(id) {
   if (sec) sec.classList.add('active');
   const nav = document.querySelector(`.sbn[data-section="${id}"]`);
   if (nav) nav.classList.add('active');
-  document.getElementById('sidebar').classList.remove('open');
+  setSidebar(false);
+  window.scrollTo(0, 0);
 }
 window.switchSection = switchSection;
 
@@ -21,18 +72,6 @@ document.querySelectorAll('.sbn').forEach(btn => {
     switchSection(btn.dataset.section);
   });
 });
-
-/* SIDEBAR TOGGLE */
-const sbToggle = document.getElementById('sbToggle');
-const sidebar = document.getElementById('sidebar');
-if (sbToggle) {
-  sbToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!sidebar.contains(e.target) && !sbToggle.contains(e.target)) {
-      sidebar.classList.remove('open');
-    }
-  });
-}
 
 /* GREETING */
 const greetEl = document.getElementById('greetMsg');
@@ -71,14 +110,12 @@ document.querySelectorAll('.counter').forEach(el => {
   setTimeout(() => requestAnimationFrame(tick), 200);
 });
 
-/*  PROGRESS BARS */
+/* PROGRESS BARS */
 setTimeout(() => {
   document.querySelectorAll('.pip-bar, .pcp-bar').forEach(bar => {
     const w = bar.style.width;
     bar.style.width = '0';
-    setTimeout(() => {
-      bar.style.width = w;
-    }, 100);
+    setTimeout(() => { bar.style.width = w; }, 100);
   });
 }, 300);
 
@@ -89,8 +126,8 @@ if (chartEl) {
   const max = Math.max(...data);
   const cols = ['#c9a84c', '#e8c76a', '#a8863a'];
   chartEl.innerHTML = data.map((v, i) => {
-    const h = Math.round((v / max) * 72);
-    return `<div style="flex:1;height:${h}px;background:${cols[i % 3]};border-radius:3px 3px 0 0;opacity:${.45 + i * .05};transition:height .8s ${i * .05}s ease"></div>`;
+    const hh = Math.round((v / max) * 72);
+    return `<div style="flex:1;height:${hh}px;background:${cols[i % 3]};border-radius:3px 3px 0 0;opacity:${.45 + i * .05};transition:height .8s ${i * .05}s ease"></div>`;
   }).join('');
 }
 
@@ -100,50 +137,24 @@ const mcSend = document.getElementById('mcSend');
 const mcMsgs = document.getElementById('mcMessages');
 
 const contactHistory = {
-  'Jane Doe': [{
-    type: 'them',
-    text: "Hi! The logo options are ready for your review. I've uploaded 3 concepts to the files section.",
-    time: '2:30 PM'
-  }, {
-    type: 'them',
-    text: "Let me know which direction feels right 🎨",
-    time: '2:31 PM'
-  }, {
-    type: 'me',
-    text: "These look amazing! I'm leaning towards concept 2. Can we make the font slightly bolder?",
-    time: '3:15 PM'
-  }, {
-    type: 'them',
-    text: "Absolutely! I'll have the updated version ready by tomorrow morning.",
-    time: '3:20 PM'
-  }, ],
-  'John Smith': [{
-    type: 'them',
-    text: "Hey! All wireframes have been uploaded to the files section.",
-    time: '9:00 AM'
-  }, {
-    type: 'them',
-    text: "Let me know if you need any revisions on the homepage layout.",
-    time: '9:01 AM'
-  }, ],
-  'Emily Clark': [{
-    type: 'them',
-    text: "Hi there! Your Q2 campaign report is ready for review.",
-    time: 'Yesterday'
-  }, {
-    type: 'them',
-    text: "Overall performance was up 41% vs last month 🎉",
-    time: 'Yesterday'
-  }, ],
-  'CG Agency Team': [{
-    type: 'them',
-    text: "Welcome to your CG Agency client portal! 🎉 We're excited to work with you.",
-    time: '3d ago'
-  }, {
-    type: 'them',
-    text: "Here you can track projects, view files, pay invoices, and message your team.",
-    time: '3d ago'
-  }, ]
+  'Jane Doe': [
+    { type: 'them', text: "Hi! The logo options are ready for your review. I've uploaded 3 concepts to the files section.", time: '2:30 PM' },
+    { type: 'them', text: "Let me know which direction feels right 🎨", time: '2:31 PM' },
+    { type: 'me', text: "These look amazing! I'm leaning towards concept 2. Can we make the font slightly bolder?", time: '3:15 PM' },
+    { type: 'them', text: "Absolutely! I'll have the updated version ready by tomorrow morning.", time: '3:20 PM' }
+  ],
+  'John Smith': [
+    { type: 'them', text: "Hey! All wireframes have been uploaded to the files section.", time: '9:00 AM' },
+    { type: 'them', text: "Let me know if you need any revisions on the homepage layout.", time: '9:01 AM' }
+  ],
+  'Emily Clark': [
+    { type: 'them', text: "Hi there! Your Q2 campaign report is ready for review.", time: 'Yesterday' },
+    { type: 'them', text: "Overall performance was up 41% vs last month 🎉", time: 'Yesterday' }
+  ],
+  'CG Agency Team': [
+    { type: 'them', text: "Welcome to your CG Agency client portal! 🎉 We're excited to work with you.", time: '3d ago' },
+    { type: 'them', text: "Here you can track projects, view files, pay invoices, and message your team.", time: '3d ago' }
+  ]
 };
 
 const autoReplies = {
@@ -170,7 +181,7 @@ function renderMessages(contact) {
   msgs.forEach(m => {
     const el = document.createElement('div');
     el.className = 'mc-msg ' + m.type;
-    el.innerHTML = `<div class="mc-bubble">${m.text}</div><span>${m.time}</span>`;
+    el.innerHTML = `<div class="mc-bubble">${esc(m.text)}</div><span>${esc(m.time)}</span>`;
     mcMsgs.appendChild(el);
   });
   mcMsgs.scrollTop = mcMsgs.scrollHeight;
@@ -183,9 +194,8 @@ document.querySelectorAll('.msg-item').forEach(item => {
     const badge = item.querySelector('.msg-unread');
     if (badge) badge.remove();
     currentContact = item.dataset.contact;
-    const init = item.dataset.init;
     document.getElementById('mcHeadName').textContent = currentContact;
-    document.getElementById('mcHeadAv').textContent = init;
+    document.getElementById('mcHeadAv').textContent = item.dataset.init;
     const statusMap = {
       'Jane Doe': 'Creative Director · Online',
       'John Smith': 'Lead Designer · Away',
@@ -194,6 +204,11 @@ document.querySelectorAll('.msg-item').forEach(item => {
     };
     document.getElementById('mcHeadStatus').textContent = statusMap[currentContact] || 'Online';
     renderMessages(currentContact);
+    // on phones the chat is below the list, so bring it into view
+    if (window.innerWidth <= 900) {
+      const chat = document.querySelector('.msg-chat');
+      if (chat) chat.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
 renderMessages(currentContact);
@@ -204,19 +219,13 @@ function sendChatMsg() {
   const text = mcInput.value.trim();
   if (!text || isMsgSending) return;
   isMsgSending = true;
+  const contact = currentContact;   // remember who this message was sent to
 
-  const now = new Date().toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-  if (!contactHistory[currentContact]) contactHistory[currentContact] = [];
-  contactHistory[currentContact].push({
-    type: 'me',
-    text,
-    time: now
-  });
+  const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  if (!contactHistory[contact]) contactHistory[contact] = [];
+  contactHistory[contact].push({ type: 'me', text, time: now });
   mcInput.value = '';
-  renderMessages(currentContact);
+  renderMessages(contact);
 
   const typing = document.createElement('div');
   typing.className = 'mc-typing';
@@ -227,17 +236,9 @@ function sendChatMsg() {
   const delay = 900 + Math.random() * 700;
   setTimeout(() => {
     typing.remove();
-    const reply = getAutoReply(currentContact);
-    const replyTime = new Date().toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-    contactHistory[currentContact].push({
-      type: 'them',
-      text: reply,
-      time: replyTime
-    });
-    renderMessages(currentContact);
+    const replyTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    contactHistory[contact].push({ type: 'them', text: getAutoReply(contact), time: replyTime });
+    if (currentContact === contact) renderMessages(contact);
     isMsgSending = false;
   }, delay);
 }
@@ -255,19 +256,27 @@ if (notifBtn) {
   panel.id = 'notifPanel';
   panel.innerHTML = `
     <div class="np-head">Notifications</div>
-    <div class="np-item"><div class="np-dot" style="background:var(--v3)"></div><div><p>Logo draft uploaded by Jane D.</p><span>2 hours ago</span></div></div>
-    <div class="np-item"><div class="np-dot" style="background:var(--blue)"></div><div><p>Homepage wireframe approved</p><span>5 hours ago</span></div></div>
-    <div class="np-item"><div class="np-dot" style="background:var(--coral)"></div><div><p>Invoice #INV-2026-09 is pending</p><span>Yesterday</span></div></div>
-    <div class="np-item"><div class="np-dot" style="background:var(--gold)"></div><div><p>New message from Emily C.</p><span>2 days ago</span></div></div>`;
-  notifBtn.style.position = 'relative';
-  notifBtn.appendChild(panel);
+    <div class="np-item" data-go="files"><div class="np-dot" style="background:var(--v3)"></div><div><p>Logo draft uploaded by Jane D.</p><span>2 hours ago</span></div></div>
+    <div class="np-item" data-go="files"><div class="np-dot" style="background:var(--blue)"></div><div><p>Homepage wireframe approved</p><span>5 hours ago</span></div></div>
+    <div class="np-item" data-go="invoices"><div class="np-dot" style="background:var(--coral)"></div><div><p>Invoice #INV-2026-09 is pending</p><span>Yesterday</span></div></div>
+    <div class="np-item" data-go="messages"><div class="np-dot" style="background:var(--gold)"></div><div><p>New message from Emily C.</p><span>2 days ago</span></div></div>`;
+  // sits next to the button (not inside it) so taps on the panel are real taps on the panel
+  (notifBtn.parentElement || document.body).appendChild(panel);
+
   notifBtn.addEventListener('click', e => {
     e.stopPropagation();
     panel.classList.toggle('open');
     const dot = notifBtn.querySelector('.notif-dot');
     if (dot) dot.style.display = 'none';
   });
+  panel.addEventListener('click', e => {
+    e.stopPropagation();
+    const item = e.target.closest('.np-item');
+    if (item && item.dataset.go) switchSection(item.dataset.go);
+    panel.classList.remove('open');
+  });
   document.addEventListener('click', () => panel.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') panel.classList.remove('open'); });
 }
 
 /* SEARCH */
@@ -289,14 +298,39 @@ if (searchInput) {
 /* NEW PROJECT MODAL */
 const projModal = document.getElementById('projModal');
 const newProjectBtn = document.getElementById('newProjectBtn');
-const closeProjModal = document.getElementById('closeProjModal');
+const closeProjModalBtn = document.getElementById('closeProjModal');
 const createProjBtn = document.getElementById('createProjectBtn');
 
-if (newProjectBtn) newProjectBtn.addEventListener('click', () => projModal.classList.add('open'));
-if (closeProjModal) closeProjModal.addEventListener('click', () => projModal.classList.remove('open'));
+function openProjModal() {
+  if (!projModal) return;
+  projModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const box = projModal.querySelector('.modal-box-dash');
+  if (box) box.scrollTop = 0;
+}
+function closeProjModal() {
+  if (!projModal) return;
+  projModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+window.openProjModal = openProjModal;
+
+if (newProjectBtn) newProjectBtn.addEventListener('click', openProjModal);
+if (closeProjModalBtn) closeProjModalBtn.addEventListener('click', closeProjModal);
 if (projModal) projModal.addEventListener('click', e => {
-  if (e.target === projModal) projModal.classList.remove('open');
+  if (e.target === projModal) closeProjModal();
 });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProjModal(); });
+
+// Overview "+ New Project": go to Projects and open the modal
+const overviewNew = document.querySelector('#sec-overview .btn-new');
+if (overviewNew) {
+  overviewNew.removeAttribute('onclick');
+  overviewNew.addEventListener('click', () => {
+    switchSection('projects');
+    openProjModal();
+  });
+}
 
 if (createProjBtn) {
   createProjBtn.addEventListener('click', async () => {
@@ -316,32 +350,22 @@ if (createProjBtn) {
     try {
       await fetch('/api/projects', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          title,
-          due,
-          status
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, due, status })
       });
     } catch {}
 
-    const colors = {
-      active: 'var(--v3)',
-      review: 'var(--gold)',
-      done: 'var(--green)'
-    };
+    const colors = { active: 'var(--v3)', review: 'var(--gold)', done: 'var(--green)' };
     const card = document.createElement('div');
     card.className = 'pcard';
     card.innerHTML = `
       <div class="pcard-top">
-        <span class="pcard-status ${status}">${status.charAt(0).toUpperCase()+status.slice(1)}</span>
-        <span class="pcard-date">${due ? 'Due '+due : 'TBD'}</span>
+        <span class="pcard-status ${esc(status)}">${esc(status.charAt(0).toUpperCase() + status.slice(1))}</span>
+        <span class="pcard-date">${due ? 'Due ' + esc(due) : 'TBD'}</span>
       </div>
-      <h3>${title}</h3>
+      <h3>${esc(title)}</h3>
       <p>New project — add description and team members.</p>
-      <div class="pcard-prog"><div class="pcp-bar" style="width:0%;background:${colors[status]||'var(--v3)'}"></div></div>
+      <div class="pcard-prog"><div class="pcp-bar" style="width:0%;background:${colors[status] || 'var(--v3)'}"></div></div>
       <div class="pcard-foot"><span>0% complete</span><div class="pcard-team"><div class="pt-av">ME</div></div></div>`;
     const grid = document.getElementById('projCards');
     if (grid) grid.prepend(card);
@@ -349,7 +373,7 @@ if (createProjBtn) {
     msg.textContent = '✓ Project created!';
     msg.style.color = '#7ec8a0';
     setTimeout(() => {
-      projModal.classList.remove('open');
+      closeProjModal();
       msg.textContent = '';
       document.getElementById('npTitle').value = '';
       document.getElementById('npDue').value = '';
@@ -372,14 +396,8 @@ if (saveProfile) {
     try {
       await fetch('/api/settings/profile', {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          company
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, company })
       });
     } catch {}
 
@@ -404,41 +422,62 @@ if (saveProfile) {
   });
 }
 
+/* INVOICE + FILE BUTTONS — one delegated handler, so buttons added later work too */
+async function handlePay(btn) {
+  if (btn.disabled) return;
+  const row = btn.closest('.it-row');
+  const id = row ? row.querySelector('span').textContent.trim() : 'Invoice';
+  btn.textContent = 'Processing…';
+  btn.disabled = true;
+  await new Promise(r => setTimeout(r, 1200));
+  const status = row && row.querySelector('.inv-pending');
+  if (status) {
+    status.textContent = 'Paid';
+    status.className = 'inv-paid';
+  }
+  btn.textContent = 'Download';
+  btn.className = 'inv-btn';
+  btn.disabled = false;
+  showToast(`${id} paid`);
+}
 
-/* INVOICE PAY */
-document.querySelectorAll('.inv-btn.pay').forEach(btn => {
-  btn.addEventListener('click', async () => {
-    btn.textContent = 'Processing…';
-    btn.disabled = true;
-    await new Promise(r => setTimeout(r, 1200));
-    const row = btn.closest('.it-row');
-    const status = row.querySelector('.inv-pending');
-    if (status) {
-      status.textContent = 'Paid';
-      status.className = 'inv-paid';
-    }
-    btn.textContent = 'Download';
-    btn.className = 'inv-btn';
-    btn.disabled = false;
-  });
+function handleInvoiceButton(btn) {
+  const row = btn.closest('.it-row');
+  const cells = row ? row.querySelectorAll('span') : [];
+  const id = cells[0] ? cells[0].textContent.trim() : 'Invoice';
+  const date = cells[3] ? cells[3].textContent.trim() : '';
+  if (btn.textContent.trim() === 'Download') showToast(`Downloading ${id}…`);
+  else showToast(`${id} will be issued on ${date}`);
+}
+
+function handleFileDownload(btn) {
+  if (btn.dataset.busy) return;
+  const card = btn.closest('.file-card');
+  const strong = card && card.querySelector('strong');
+  const name = strong ? strong.textContent.trim() : 'File';
+  btn.dataset.busy = '1';
+  btn.textContent = '✓';
+  btn.style.borderColor = 'var(--green)';
+  btn.style.color = 'var(--green)';
+  showToast(`Downloading ${name}…`);
+  setTimeout(() => {
+    btn.textContent = '↓';
+    btn.style.borderColor = '';
+    btn.style.color = '';
+    delete btn.dataset.busy;
+  }, 2000);
+}
+
+document.addEventListener('click', e => {
+  const pay = e.target.closest('.inv-btn.pay');
+  if (pay) { handlePay(pay); return; }
+  const inv = e.target.closest('.inv-btn');
+  if (inv) { handleInvoiceButton(inv); return; }
+  const dl = e.target.closest('.fc-dl');
+  if (dl) handleFileDownload(dl);
 });
 
-/* FILE DOWNLOAD (demo) */
-document.querySelectorAll('.fc-dl').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const name = btn.closest('.file-card').querySelector('strong').textContent;
-    btn.textContent = '✓';
-    btn.style.borderColor = 'var(--green)';
-    btn.style.color = 'var(--green)';
-    setTimeout(() => {
-      btn.textContent = '↓';
-      btn.style.borderColor = '';
-      btn.style.color = '';
-    }, 2000);
-  });
-});
-
-/* FILE UPLOAD (demo) */
+/* FILE UPLOAD */
 const uploadBtn = document.getElementById('uploadBtn');
 if (uploadBtn) {
   const fileInput = document.createElement('input');
@@ -451,17 +490,12 @@ if (uploadBtn) {
     if (!file) return;
     const ext = file.name.split('.').pop().toUpperCase().slice(0, 3);
     const size = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
-    const date = new Date().toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-    });
+    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     const card = document.createElement('div');
     card.className = 'file-card';
-    card.innerHTML = `<div class="fc-icon" style="background:var(--vdim);color:var(--v3)">${ext}</div><div class="fc-info"><strong>${file.name}</strong><span>${size} · ${date}</span></div><button class="fc-dl">↓</button>`;
+    card.innerHTML = `<div class="fc-icon" style="background:var(--vdim);color:var(--v3)">${esc(ext)}</div><div class="fc-info"><strong>${esc(file.name)}</strong><span>${size} · ${date}</span></div><button class="fc-dl">↓</button>`;
     document.querySelector('.files-grid').prepend(card);
     fileInput.value = '';
+    showToast(`${file.name} uploaded`);
   });
 }
-
-
