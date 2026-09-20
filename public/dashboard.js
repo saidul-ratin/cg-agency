@@ -1,7 +1,7 @@
 /* CG Agency — dashboard.js
    Dashboard: Section Switching, Sidebar, Greeting, Counters,
    Progress Bars, Charts, Messages, Notifications, Search,
-   Project Modal, Settings, Invoices, File Upload, Logout */
+   Project Modal, Settings, Invoices */
 
 /* SECTION SWITCHING */
 function switchSection(id) {
@@ -404,29 +404,6 @@ if (saveProfile) {
   });
 }
 
-const savePw = document.getElementById('savePw');
-if (savePw) {
-  savePw.addEventListener('click', () => {
-    const cur = document.getElementById('curPw').value.trim();
-    const nw = document.getElementById('newPw').value.trim();
-    const msg = document.getElementById('savePwMsg');
-    if (!cur || !nw) {
-      msg.textContent = '⚠ Fill in both fields.';
-      msg.style.color = '#ff6b4a';
-      return;
-    }
-    if (nw.length < 8) {
-      msg.textContent = '⚠ Password must be at least 8 characters.';
-      msg.style.color = '#ff6b4a';
-      return;
-    }
-    msg.textContent = '✓ Password updated!';
-    msg.style.color = '#e8c76a';
-    document.getElementById('curPw').value = '';
-    document.getElementById('newPw').value = '';
-    setTimeout(() => msg.textContent = '', 2500);
-  });
-}
 
 /* INVOICE PAY */
 document.querySelectorAll('.inv-btn.pay').forEach(btn => {
@@ -487,18 +464,4 @@ if (uploadBtn) {
   });
 }
 
-/*  LOGOUT */
-const logoutBtn = document.getElementById('logoutBtn');
-if (logoutBtn) {
-  logoutBtn.addEventListener('click', async e => {
-    e.preventDefault();
-    try {
-      await fetch('/api/auth/logout', {
-        method: 'POST'
-      });
-    } catch {}
-    sessionStorage.removeItem('cg_user');
-    sessionStorage.removeItem('cg_token');
-    location.href = 'login.html';
-  });
-}
+

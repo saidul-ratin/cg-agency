@@ -1,5 +1,5 @@
 /* CG Agency — server.js
-   Express Backend: Auth, Projects, Messages, Chat,
+   Express Backend: Projects, Messages, Chat,
    Invoices, Contact Form, Analytics, Settings */
 
 const express = require('express');
@@ -13,14 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const users = [{
-  id: 1,
-  email: 'mdsaidulislamratin967@gmail.com',
-  password: 'demo123',
-  name: 'MD Saidul Islam Ratin',
-  company: 'CG Agency',
-  role: 'client'
-}];
 
 const projects = [{
   id: 1,
@@ -100,82 +92,6 @@ function getBotReply(msg) {
   return botReplies.default;
 }
 
-/* AUTH */
-app.post('/api/auth/login', (req, res) => {
-  const {
-    email,
-    password
-  } = req.body;
-  if (!email || !password) return res.status(400).json({
-    success: false,
-    message: 'Email and password required.'
-  });
-  const user = users.find(u => u.email === email && u.password === password);
-  if (!user) return res.status(401).json({
-    success: false,
-    message: 'Invalid credentials. Use mdsaidulislamratin967@gmail.com / demo123'
-  });
-  const {
-    password: _,
-    ...safeUser
-  } = user;
-  res.json({
-    success: true,
-    user: safeUser,
-    token: 'demo-token-' + user.id,
-    message: 'Login successful!'
-  });
-});
-
-app.post('/api/auth/register', (req, res) => {
-  const {
-    firstName,
-    lastName,
-    email,
-    password,
-    company
-  } = req.body;
-  if (!firstName || !email || !password) return res.status(400).json({
-    success: false,
-    message: 'Required fields missing.'
-  });
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return res.status(400).json({
-    success: false,
-    message: 'Invalid email address.'
-  });
-  if (password.length < 8) return res.status(400).json({
-    success: false,
-    message: 'Password must be at least 8 characters.'
-  });
-  if (users.find(u => u.email === email)) return res.status(409).json({
-    success: false,
-    message: 'Email already registered.'
-  });
-  const newUser = {
-    id: users.length + 1,
-    email,
-    password,
-    name: `${firstName} ${lastName}`,
-    company: company || '',
-    role: 'client'
-  };
-  users.push(newUser);
-  const {
-    password: _,
-    ...safeUser
-  } = newUser;
-  res.status(201).json({
-    success: true,
-    user: safeUser,
-    token: 'demo-token-' + newUser.id,
-    message: 'Account created successfully!'
-  });
-});
-
-app.post('/api/auth/logout', (req, res) => res.json({
-  success: true,
-  message: 'Logged out.'
-}));
 
 /* PROJECTS */
 app.get('/api/projects', (req, res) => res.json({

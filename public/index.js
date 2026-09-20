@@ -1,6 +1,6 @@
 /* CG Agency — index.js
    Fixed: Mobile touch, smooth scroll, services click,
-          FAQ, testimonials, login, all buttons */
+          FAQ, testimonials, all buttons */
 
 /* SMOOTH SCROLL UTILITY */
 function scrollToSection(id) {
