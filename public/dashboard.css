@@ -1831,11 +1831,9 @@ a, button, input, select { touch-action: manipulation; -webkit-tap-highlight-col
 
 
 
-/* ================================================================
-   CG Agency Dashboard — MOBILE / BUTTON FIXES
+/* CG Agency Dashboard — MOBILE / BUTTON FIXES
    Paste this whole block at the very END of dashboard.css
-   (it must stay last so it overrides the older rules above)
-   ================================================================ */
+   (it must stay last so it overrides the older rules above)  */
 
 /* 1. Layout safety: nothing may push the page wider than the screen */
 html { overflow-x: hidden; }

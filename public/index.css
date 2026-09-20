@@ -4542,11 +4542,9 @@ a, button, .pf-card, .pfc-btn, .svc-row, .tst-card,
 
 
 
-/* ================================================================
-   CG Agency — MOBILE / BUTTON FIXES
+/* CG Agency — MOBILE / BUTTON FIXES
    Paste this whole block at the very END of index.css
-   (it must stay last so it overrides the older rules above)
-   ================================================================ */
+   (it must stay last so it overrides the older rules above)  */
 
 /* 1. No sideways scrolling on phones */
 html { overflow-x: hidden; }

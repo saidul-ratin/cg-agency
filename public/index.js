@@ -6,7 +6,7 @@
    - custom cursor also starts when a desktop-width window was loaded narrow
    - href="#" links no longer jump to the top */
 
-/* ── HELPERS ── */
+/*  HELPERS */
 const coarseMQ = window.matchMedia ? window.matchMedia('(pointer: coarse)') : { matches: false };
 const isTouchLike = () => coarseMQ.matches || window.innerWidth < 1024;
 const isMobile = /Android|iPhone|iPad|iPod|Touch/i.test(navigator.userAgent) || isTouchLike();
