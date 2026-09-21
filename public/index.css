@@ -4690,3 +4690,106 @@ body.menu-open .back-top { display: none; }
 
 /* 11. Long e-mail address no longer pushes the contact block wider than the screen */
 .ci span:last-child { min-width: 0; overflow-wrap: anywhere; }
+
+
+/* ================================================================
+   FOOTER — cleaner layout + room for the floating buttons
+   Paste this block at the very END of index.css (after the
+   "MOBILE / BUTTON FIXES" block).
+   ================================================================ */
+
+.footer {
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 90% at 12% 0%, rgba(201, 168, 76, .07), transparent 65%),
+    var(--bg2);
+  /* the big bottom padding keeps the copyright line clear of the
+     back-to-top arrow (left) and the chat button (right) */
+  padding: 72px 0 calc(96px + env(safe-area-inset-bottom, 0px));
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vborder), transparent);
+  pointer-events: none;
+}
+
+/* brand on the left, link columns on the right */
+.ft-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+.ft-brand { min-width: 0; }
+.ft-brand p { max-width: 320px; }
+
+.ft-nav {
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 32px;
+}
+.ftn {
+  gap: 12px;
+  min-width: 0;
+}
+.ftn h4 {
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 4px;
+}
+.ftn h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--v3);
+}
+.ftn a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  transition: color .2s, transform .2s;
+}
+.ftn a:hover { transform: translateX(4px); }
+.ftn a.ftn-cta {
+  color: var(--v3);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* tablet: brand on top, three columns below */
+@media (max-width: 1100px) {
+  .ft-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ft-brand p { max-width: 460px; }
+}
+
+/* phone */
+@media (max-width: 768px) {
+  .footer { padding-top: 56px; }
+  .ft-top {
+    gap: 36px;
+    margin-bottom: 36px;
+  }
+  .ft-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+  .ftn:last-child { grid-column: 1 / -1; }   /* Contact takes the full row */
+}
+@media (max-width: 480px) {
+  .footer { padding-top: 48px; }
+  .ft-brand p { max-width: 100%; }
+}
+
